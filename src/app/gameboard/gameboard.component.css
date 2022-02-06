@@ -1,0 +1,14 @@
+table {
+    margin: 0 auto;
+}
+td {
+    text-align: center;
+}
+td.total {
+    min-width: 32px;
+}
+button {
+    min-width: 32px;
+    padding: 0;
+
+}
