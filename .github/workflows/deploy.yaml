@@ -14,6 +14,37 @@ concurrency:
 
 
 jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        # https://github.com/actions/checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Set up Python
+        # https://github.com/actions/setup-python
+        uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Enable cache for pre-commit hooks
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
+          restore-keys: |
+            pre-commit|${{ env.pythonLocation }}
+            pre-commit|
+
+      - name: Run pre-commit checks
+        run: pre-commit run -a
+
+      - name: Run pre-commit gc
+        run: pre-commit gc
+
   build:
     runs-on: ubuntu-latest
     permissions:
