@@ -3,7 +3,7 @@
 name: Build & Deploy
 on:  # yamllint disable-line rule:truthy
   push:
-    branches: [main]
+  pull_request:
 
 # Allow only one concurrent deployment, skipping runs queued between the run
 # in-progress and latest queued. However, do NOT cancel in-progress runs as we
@@ -41,13 +41,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
+      - name: Install packages
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
       - name: Build
         run: |
-          npm ci
           npm run build
           touch out/.nojekyll
 
       - name: Deploy
+        if: github.ref == 'refs/heads/main'
         # https://github.com/JamesIves/github-pages-deploy-action
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
