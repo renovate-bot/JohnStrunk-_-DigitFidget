@@ -1,0 +1,16 @@
+---
+# https://yamllint.readthedocs.io/en/stable/configuration.html
+
+extends: default
+
+rules:
+  comments:
+    ignore: |
+      /.github/workflows/**
+  indentation:
+    indent-sequences: consistent
+  line-length:
+    allow-non-breakable-inline-mappings: true
+    ignore: |
+      /.github/workflows/**
+  new-lines: disable

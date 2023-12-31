@@ -5,4 +5,4 @@ ago.
 
 ... very much a work-in-progress
 
-https://johnstrunk.github.io/DigitFidget/
+[https://johnstrunk.github.io/DigitFidget/](https://johnstrunk.github.io/DigitFidget/)
