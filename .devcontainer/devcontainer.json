@@ -1,8 +1,8 @@
 {
 	"name": "Node.js & TypeScript",
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye@sha256:76fea418f6f051f971010c92915fbd39341315ca03c2b8dbec59e15484ee9759",
 	"features": {
-		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {}
+		"ghcr.io/devcontainers-contrib/features/pre-commit:2@sha256:c18a7604e12b531e5a4e990c630e3f036d932903eb1e3b333e5c9e10a891e1a8": {}
 	},
 	"postCreateCommand": {
 		"Initialize pre-commit environment": "nohup sh -c 'pre-commit install -f --install-hooks &' > /dev/null"
