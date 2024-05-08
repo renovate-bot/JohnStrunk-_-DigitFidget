@@ -1,6 +1,6 @@
 {
 	"name": "Node.js & TypeScript",
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye@sha256:76fea418f6f051f971010c92915fbd39341315ca03c2b8dbec59e15484ee9759",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye@sha256:e4ed4d7d418c422bbd9a0c8e7d0465c7030ef6743689ae5640491fe8b5cdc2d8",
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/pre-commit:2@sha256:c18a7604e12b531e5a4e990c630e3f036d932903eb1e3b333e5c9e10a891e1a8": {}
 	},
