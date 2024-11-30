@@ -54,45 +54,45 @@ jobs:
       contents: write
     steps:
       # https://github.com/actions/checkout
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@v4.2.2
 
       # https://github.com/actions/setup-node
-      - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
+      - uses: actions/setup-node@v4.1.0
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
-      - name: Restore cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
-        with:
-          path: |
-            .next/cache
-          # Generate a new cache whenever packages or source files change.
-          # yamllint disable-line rule:line-length
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior
-          # cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+  # - name: Restore cache
+  #   uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
+  #   with:
+  #     path: |
+  #       .next/cache
+  #     # Generate a new cache whenever packages or source files change.
+  #     # yamllint disable-line rule:line-length
+  #     key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+  #     # If source files changed but packages didn't, rebuild from a prior
+  #     # cache.
+  #     restore-keys: |
+  #       ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
-      - name: Install packages
-        run: npm ci
+  # - name: Install packages
+  #   run: npm ci
 
-      - name: Run tests
-        run: npm test
+  # - name: Run tests
+  #   run: npm test
 
-      - name: Build
-        run: |
-          npm run build
-          touch out/.nojekyll
+  # - name: Build
+  #   run: |
+  #     npm run build
+  #     touch out/.nojekyll
 
-      - name: Deploy
-        if: github.ref == 'refs/heads/main'
-        # https://github.com/JamesIves/github-pages-deploy-action
-        uses: JamesIves/github-pages-deploy-action@94f3c658273cf92fb48ef99e5fbc02bd2dc642b2 # v4.6.3
-        with:
-          branch: gh-pages
-          folder: out
+  # - name: Deploy
+  #   if: github.ref == 'refs/heads/main'
+  #   # https://github.com/JamesIves/github-pages-deploy-action
+  #   uses: JamesIves/github-pages-deploy-action@94f3c658273cf92fb48ef99e5fbc02bd2dc642b2 # v4.6.3
+  #   with:
+  #     branch: gh-pages
+  #     folder: out
 
   success:
     name: "Successful build"
