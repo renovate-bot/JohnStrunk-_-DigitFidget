@@ -1,13 +1,24 @@
 {
 	"name": "Node.js & TypeScript",
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye@sha256:e219e4d17fc30b477b4143a0cf187725dab9f5655b82602e9665cd101a6f9ece",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1.1.6-22",
 	"features": {
-		"ghcr.io/devcontainers-contrib/features/pre-commit:2@sha256:c18a7604e12b531e5a4e990c630e3f036d932903eb1e3b333e5c9e10a891e1a8": {}
+		"ghcr.io/devcontainers-extra/features/act:1.0.14": {},
+		"ghcr.io/devcontainers/features/github-cli:1.0.13": {},
+		"ghcr.io/devcontainers-contrib/features/pre-commit:2.0.17": {}
 	},
 	"postCreateCommand": {
-		"Initialize pre-commit environment": "nohup sh -c 'pre-commit install -f --install-hooks &' > /dev/null"
+		"Initialize pre-commit environment": "nohup sh -c 'pre-commit install -f --install-hooks &' < /dev/null > /dev/null 2>&1"
 	},
+	"waitFor": "onCreateCommand",
+	"updateContentCommand": "npm install",
 	"postAttachCommand": {
-		"Update dotfiles": "chezmoi update --apply --verbose --force"
-	}
+		"server": "npm start"
+	},
+	"portsAttributes": {
+		"3000": {
+			"label": "Application",
+			"onAutoForward": "openPreview"
+		}
+	},
+	"forwardPorts": [3000]
 }
