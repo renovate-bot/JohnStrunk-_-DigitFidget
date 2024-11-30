@@ -10,7 +10,6 @@ queue_rules:
       - "#changes-requested-reviews-by=0"
       - label!=do-not-merge
       - check-success="Successful build"
-      - check-success=DCO
     merge_conditions: []
     merge_method: merge
 
