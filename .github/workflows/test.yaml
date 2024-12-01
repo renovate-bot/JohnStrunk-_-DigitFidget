@@ -1,5 +1,4 @@
 ---
-# https://www.viget.com/articles/host-build-and-deploy-next-js-projects-on-github-pages/
 name: Build & Test
 on:  # yamllint disable-line rule:truthy
   push:
@@ -20,6 +19,7 @@ jobs:
       - name: Set up Python
         # https://github.com/actions/setup-python
         uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
+        id: python
 
       - name: Install pre-commit
         run: pip install pre-commit
@@ -28,9 +28,9 @@ jobs:
         uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
         with:
           path: ~/.cache/pre-commit
-          key: pre-commit|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
+          key: pre-commit|${{ steps.python.outputs.python-version }}|${{ hashFiles('.pre-commit-config.yaml') }}
           restore-keys: |
-            pre-commit|${{ env.pythonLocation }}
+            pre-commit|${{ steps.python.outputs.python-version }}|
             pre-commit|
 
       - name: Run pre-commit checks

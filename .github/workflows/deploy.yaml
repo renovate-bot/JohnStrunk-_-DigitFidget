@@ -1,5 +1,5 @@
 ---
-# https://www.viget.com/articles/host-build-and-deploy-next-js-projects-on-github-pages/
+# https://vite.dev/guide/static-deploy.html#github-pages
 name: Build & Deploy
 on:  # yamllint disable-line rule:truthy
   push:
