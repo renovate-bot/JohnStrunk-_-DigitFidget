@@ -2,6 +2,7 @@ import js from '@eslint/js'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import tsdoc from 'eslint-plugin-tsdoc'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
@@ -22,6 +23,7 @@ export default tseslint.config(
       react,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      'tsdoc': tsdoc,
     },
     rules: {
       ...react.configs.recommended.rules,
@@ -31,6 +33,7 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      "tsdoc/syntax": "warn",
     },
     settings: {
       react: { version: '18.3' },
