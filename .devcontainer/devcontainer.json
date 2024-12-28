@@ -15,7 +15,10 @@
 		"vscode": {
 			"extensions": [
 				"vitest.explorer",
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"ms-edgedevtools.vscode-edge-devtools",
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
 			]
 		}
 	}
