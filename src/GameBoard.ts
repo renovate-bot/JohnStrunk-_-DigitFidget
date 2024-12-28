@@ -184,4 +184,15 @@ export class Board {
     isEnabled(row: number, col: number): boolean {
         return this.cells[row][col].isEnabled();
     }
+
+    /**
+     * Returns the Cell at the given position.
+     *
+     * @param row - The row of the Cell.
+     * @param col - The column of the Cell.
+     * @returns The Cell.
+     */
+    getCell(row: number, col: number): Cell {
+        return this.cells[row][col];
+    }
 }
