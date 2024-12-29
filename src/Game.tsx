@@ -19,13 +19,14 @@ export default function Game() {
         const rowEle = [];
         for (let column = 0; column < board.getSize(); column++) {
             const key = row.toString() + "," + column.toString();
-            rowEle.push(<td key={key}><GameCell value={board.value(row, column)} toggle={() => { toggleCell(row, column); }} /></td>);
+            const cell = board.getCell(row, column);
+            rowEle.push(<td key={key}><GameCell enabled={cell.isEnabled()} value={cell.internalValue()} toggle={() => { toggleCell(row, column); }} /></td>);
         }
-        boardTable.push(<tr key={row}>{rowEle}<td>{board.rowDelta(row)}</td></tr>);
+        boardTable.push(<tr key={row}>{rowEle}<td className="rowdelta">{board.rowDelta(row)}</td></tr>);
     }
     const cDeltas = [];
     for (let column = 0; column < board.getSize(); column++) {
-        cDeltas.push(<td key={column}>{board.colDelta(column)}</td>);
+        cDeltas.push(<td key={column} className="coldelta">{board.colDelta(column)}</td>);
     }
     cDeltas.push(<td key="empty"></td>); // Add an empty cell to make the table square.
     boardTable.push(<tr key="cdeltas">{cDeltas}</tr>);

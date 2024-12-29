@@ -1,11 +1,12 @@
 
 interface GameCellProps {
     value: number;
+    enabled: boolean;
     toggle: () => void;
 }
 
-export default function GameCell({ value, toggle }: GameCellProps) {
+export default function GameCell({ value, enabled, toggle }: GameCellProps) {
     return (
-        <button onClick={toggle}>{value}</button>
+        <button className={enabled ? "on" : "off"} onClick={toggle}>{value}</button>
     );
 }
