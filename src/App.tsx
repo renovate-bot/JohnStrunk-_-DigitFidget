@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
-import About from './About'
-import './App.css'
-import Game from './Game'
-import MainMenu from './MainMenu'
+import About from './components/About'
+import Game from './components/Game'
+import MainMenu from './components/MainMenu'
 
 function App() {
   return (

@@ -12,7 +12,7 @@ repos:
     rev: v5.0.0
     hooks:
       - id: check-added-large-files  # Prevents giant files from being committed
-      - id: check-json               # Check that JSON files are valid
+      # - id: check-json               # Check that JSON files are valid
       - id: check-merge-conflict     # Check merge conflict strings
       - id: check-symlinks           # Ensure symlinks have a valid target
       - id: check-toml               # Ensure toml files are valid
@@ -26,7 +26,7 @@ repos:
     rev: "v1.35.1"
     hooks:
       - id: yamllint
-        args: ["--strict"]
+        args: ["-c", "./.github/.yamllint.yaml", "--strict"]
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: "v0.44.0"
@@ -46,3 +46,9 @@ repos:
     rev: "39.171.1"
     hooks:
       - id: renovate-config-validator
+
+  - repo: https://gitlab.com/bmares/check-json5
+    rev: "v1.0.0"
+    hooks:
+      # Check that JSON files are valid JSON5
+      - id: check-json5
