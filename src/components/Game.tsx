@@ -14,8 +14,8 @@ export default function Game() {
     }
 
     const boardTable = [];
-    const posColor = "text-green-500";
-    const negColor = "text-red-500";
+    const posColor = "text-green-700";
+    const negColor = "text-red-700";
     const zeroColor = "text-gray-500";
     for (let row = 0; row < board.getSize(); row++) {
         const rowEle = [];
@@ -42,19 +42,22 @@ export default function Game() {
         }
         cDeltas.push(<td key={column} className={`text-center font-bold ${cdColor}`}>{board.colDelta(column)}</td>);
     }
-    cDeltas.push(<td key="empty"></td>); // Add an empty cell to make the table square.
+    cDeltas.push(<td key="empty" className="w-[2rem]"></td>); // Add an empty cell to make the table square.
     boardTable.push(<tr key="cdeltas">{cDeltas}</tr>);
 
     return (
-        <div>
-            <h1 className="mx-auto w-max-sm text-center text-xl font-bold">Digit Fidget</h1>
-            <table className="mx-auto max-w-full">
-                <tbody>
-                    {boardTable}
-                </tbody>
-            </table>
+        <div className="flex flex-col items-center p-5">
+            <h1 className="text-center text-2xl font-bold">Digit Fidget</h1>
+            <div className="py-3">
+                <table className="mx-auto w-min">
+                    <tbody>
+                        {boardTable}
+                    </tbody>
+                </table>
+            </div>
+            <p>Toggle the cells to zero-out the rows and columns.</p>
             <div className="mx-auto w-min">
-                <NavLink to="../">Quit</NavLink>
+                <NavLink className="btn" to="../">Quit</NavLink>
             </div>
         </div >
     )
