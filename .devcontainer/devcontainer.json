@@ -10,7 +10,7 @@
 		"Initialize pre-commit environment": "nohup sh -c 'pre-commit install -f --install-hooks &' < /dev/null > /dev/null 2>&1"
 	},
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "npm install",
+	"updateContentCommand": "yarn",
 	"customizations": {
 		"vscode": {
 			"extensions": [
