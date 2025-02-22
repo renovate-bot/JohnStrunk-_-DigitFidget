@@ -42,7 +42,9 @@ export default function Game() {
         }
         cDeltas.push(<td key={column} className={`text-center font-bold ${cdColor}`}>{board.colDelta(column)}</td>);
     }
-    cDeltas.push(<td key="empty" className="w-[2rem]"></td>); // Add an empty cell to make the table square.
+    // Add an empty cell to make the table square and style it so that the grid
+    // doesn't shift when the row deltas use fewer characters
+    cDeltas.push(<td key="empty" className="w-[2rem] inline-block"></td>);
     boardTable.push(<tr key="cdeltas">{cDeltas}</tr>);
 
     return (
