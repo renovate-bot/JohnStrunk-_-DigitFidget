@@ -51,17 +51,17 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
         with:
-          node-version: 22
-          cache: npm
+          node-version: lts/*
+          cache: yarn
 
       - name: Install packages
-        run: npm ci
+        run: yarn install --immutable
 
       - name: Run tests
-        run: npm test
+        run: yarn run test
 
       - name: Build
-        run: npm run build
+        run: yarn run build
 
   success:
     name: "Successful build"

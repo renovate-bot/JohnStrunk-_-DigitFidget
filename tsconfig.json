@@ -1,7 +1,25 @@
 {
+  // https://github.com/alan2207/bulletproof-react/blob/master/docs/project-standards.md#absolute-imports
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      // Use absolute imports for all packages. Anything under src/... can be imported with @/...
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "types": [
+      // https://vitest.dev/guide/in-source.html#typescript
+      "vitest/importMeta"
+    ]
+  },
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
   ]
 }
