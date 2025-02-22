@@ -1,7 +1,7 @@
+import GameCell from "@/components/GameCell";
 import { useState } from "react";
 import { NavLink, useParams } from "react-router";
 import { Board } from "./GameBoard";
-import GameCell from "./GameCell";
 
 export default function Game() {
     const { size } = useParams();

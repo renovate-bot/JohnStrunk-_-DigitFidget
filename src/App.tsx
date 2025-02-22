@@ -1,7 +1,7 @@
+import About from '@/components/About'
+import Game from '@/components/Game'
+import MainMenu from '@/components/MainMenu'
 import { BrowserRouter, Route, Routes } from 'react-router'
-import About from './components/About'
-import Game from './components/Game'
-import MainMenu from './components/MainMenu'
 
 function App() {
   return (
