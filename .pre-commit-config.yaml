@@ -37,7 +37,6 @@ repos:
           (?x)^(
                 .github/pull_request_template.md |
                 .github/prompts/.*\.md |
-                .specify/memory/.*\.md |
                 .specify/templates/.*\.md
             )$
 

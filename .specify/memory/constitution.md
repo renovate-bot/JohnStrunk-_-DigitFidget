@@ -1,50 +1,90 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+Version change: 0.0.0 → 1.0.0
+List of modified principles: N/A (initial set)
+Added sections: All core principles, Governance
+Removed sections: None
+Templates requiring updates:
+✅ plan-template.md
+✅ spec-template.md
+✅ tasks-template.md
+⚠ None pending
+Follow-up TODOs: None. Ratification date set to 2025-10-04.
+-->
+
+# Digit Fidget Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Test-Driven Development (TDD)
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+All features MUST be developed using TDD. Tests MUST be written before
+implementation, MUST fail initially, and MUST pass after implementation. The
+Red-Green-Refactor cycle is strictly enforced for all code changes.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+**Rationale:** Ensures code correctness, prevents regressions, and enforces
+discipline in feature development.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Comprehensive Automated Testing
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+Every feature MUST have automated tests at both the unit and end-to-end (E2E)
+levels. Test coverage MUST be maintained and enforced for all code paths. No
+feature may be merged without passing all required tests.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+**Rationale:** Guarantees reliability and confidence in releases, and supports
+rapid iteration.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Code Documentation
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+All code MUST be properly documented. Public APIs, modules, and complex logic
+MUST have clear, up-to-date documentation. Documentation is a required part of
+the review and merge process.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+**Rationale:** Facilitates onboarding, maintenance, and collaboration.
+
+### Enforced Typing
+
+All code MUST use and enforce optional typing specifications provided by the
+language and toolchain. Type checks MUST pass in CI. No code with type errors
+may be merged.
+
+**Rationale:** Reduces runtime errors and improves code clarity and
+maintainability.
+
+### Progressive Web App (PWA) & Mobile-First
+
+The game MUST be implemented as a PWA, optimized for mobile-first but fully
+functional on desktop browsers.
+
+**Rationale:** Ensures accessibility and reach across devices.
+
+## Additional Constraints
+
+- The technology stack MUST support robust automated testing and typing (e.g.,
+  TypeScript, modern JS frameworks).
+- All dependencies MUST be open source and actively maintained.
+- Accessibility and performance best practices MUST be followed.
+
+## Development Workflow
+
+- All code changes MUST be peer-reviewed.
+- CI/CD pipelines MUST enforce all principles above.
+- Feature branches MUST pass all tests and type checks before merge.
+- Releases MUST be versioned semantically.
+- The `.github/lint-all.sh` script MUST be run after each change to enforce
+  linting via pre-commit before changes are considered complete.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- This constitution supersedes all other development practices for Digit Fidget.
+- Amendments require documentation, team approval, and a migration plan if
+  breaking.
+- All PRs and reviews MUST verify compliance with these principles.
+- Constitution versioning follows semantic versioning:
+  - MAJOR: Backward incompatible governance/principle removals or
+    redefinitions.
+  - MINOR: New principle/section added or materially expanded guidance.
+  - PATCH: Clarifications, wording, typo fixes, non-semantic refinements.
+- Compliance reviews are required at each release.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-10-04 | **Last Amended**: 2025-10-04
