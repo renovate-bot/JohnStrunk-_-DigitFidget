@@ -1,3 +1,7 @@
+**Coverage Requirement:**
+
+- Unit test coverage MUST be maintained at a minimum of 80% for all code paths. This is enforced in CI and is a merge requirement.
+
 # Feature Specification: [FEATURE NAME]
 
 **Feature Branch**: `[###-feature-name]`  
@@ -39,6 +43,12 @@
 - **Mandatory sections**: Must be completed for every feature
 - **Optional sections**: Include only when relevant to the feature
 - When a section doesn't apply, remove it entirely (don't leave as "N/A")
+
+**Default tech stack:**
+
+- All features are implemented using Vite and React (TypeScript).
+- Automated tests use Vitest (unit/integration) and Playwright (E2E).
+- Yarn (Berry) is used for all package management and dependency installation.
 
 ### For AI Generation
 

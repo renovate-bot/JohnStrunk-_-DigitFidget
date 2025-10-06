@@ -1,18 +1,22 @@
 <!--
 Sync Impact Report
-Version change: 0.0.0 → 1.0.0
-List of modified principles: N/A (initial set)
-Added sections: All core principles, Governance
+Version change: 1.3.0 → 1.4.0
+List of modified principles: None
+Added sections: Additional Constraints (Yarn Berry package management)
 Removed sections: None
 Templates requiring updates:
 ✅ plan-template.md
 ✅ spec-template.md
 ✅ tasks-template.md
 ⚠ None pending
-Follow-up TODOs: None. Ratification date set to 2025-10-04.
+Follow-up TODOs: None. Ratification date remains 2025-10-04. Last amended updated to 2025-10-06.
 -->
 
 # Digit Fidget Constitution
+
+## Application Summary
+
+Digit Fidget is a simple puzzle game where the user is presented with a random grid of cells, each containing a number from 1-9. Each column and row has a target sum. The objective of the game is to toggle the cells (turning them on or off) such that the "on" cells for each column and row match the target sum.
 
 ## Core Principles
 
@@ -27,12 +31,9 @@ discipline in feature development.
 
 ### Comprehensive Automated Testing
 
-Every feature MUST have automated tests at both the unit and end-to-end (E2E)
-levels. Test coverage MUST be maintained and enforced for all code paths. No
-feature may be merged without passing all required tests.
+Every feature MUST have automated tests at both the unit and end-to-end (E2E) levels. Unit test coverage MUST be maintained at a minimum of 80% for all code paths. Test coverage MUST be enforced in CI. No feature may be merged without passing all required tests and meeting the minimum coverage threshold.
 
-**Rationale:** Guarantees reliability and confidence in releases, and supports
-rapid iteration.
+**Rationale:** Guarantees reliability, confidence in releases, and supports rapid iteration. The 80% coverage floor ensures a baseline of code quality and defect prevention.
 
 ### Code Documentation
 
@@ -60,8 +61,10 @@ functional on desktop browsers.
 
 ## Additional Constraints
 
-- The technology stack MUST support robust automated testing and typing (e.g.,
-  TypeScript, modern JS frameworks).
+- The technology stack for Digit Fidget is Vite and React. All code MUST be written using this stack.
+- Automated testing MUST use Vitest for unit/integration tests and Playwright for end-to-end (E2E) browser testing.
+- The stack MUST support robust automated testing and typing (TypeScript is required).
+- Yarn (Berry) MUST be used for all package management and dependency installation.
 - All dependencies MUST be open source and actively maintained.
 - Accessibility and performance best practices MUST be followed.
 
@@ -87,4 +90,4 @@ functional on desktop browsers.
   - PATCH: Clarifications, wording, typo fixes, non-semantic refinements.
 - Compliance reviews are required at each release.
 
-**Version**: 1.0.0 | **Ratified**: 2025-10-04 | **Last Amended**: 2025-10-04
+**Version**: 1.4.0 | **Ratified**: 2025-10-04 | **Last Amended**: 2025-10-06
