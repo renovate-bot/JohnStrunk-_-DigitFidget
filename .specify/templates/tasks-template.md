@@ -55,9 +55,9 @@
 
 **CRITICAL: These tests MUST be written and MUST FAIL before ANY implementation**
 
-- [ ] T004 [P] Contract test POST /api/users in tests/contract/test_users_post.py
-- [ ] T005 [P] Contract test GET /api/users/{id} in tests/contract/test_users_get.py
-- [ ] T006 [P] Integration test user registration in tests/integration/test_registration.py
+- [ ] T004 [P] Unit test (Vitest) for feature logic in tests/unit/[feature].test.ts
+- [ ] T005 [P] Integration test (Vitest) for feature flow in tests/integration/[feature].test.ts
+- [ ] T006 [P] E2E test (Playwright) for user scenario in tests/e2e/[feature].spec.ts
 - [ ] T007 [P] Integration test auth flow in tests/integration/test_auth.py
 
 ## Phase 3.3: Core Implementation (ONLY after tests are failing)
@@ -108,6 +108,8 @@ Task: "Integration test auth in tests/integration/test_auth.py"
 - Verify tests fail before implementing
 - Commit after each task
 - Avoid: vague tasks, same file conflicts
+- Unit test coverage MUST be maintained at a minimum of 80% for all code paths (enforced in CI).
+- Yarn (Berry) MUST be used for all package management and dependency installation.
 
 ## Task Generation Rules
 

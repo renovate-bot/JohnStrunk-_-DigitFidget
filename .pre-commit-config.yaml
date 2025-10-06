@@ -37,7 +37,8 @@ repos:
           (?x)^(
                 .github/pull_request_template.md |
                 .github/prompts/.*\.md |
-                .specify/templates/.*\.md
+                .specify/.*\.md |
+                specs/.*\.md
             )$
 
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
