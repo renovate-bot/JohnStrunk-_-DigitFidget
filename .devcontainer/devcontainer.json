@@ -2,15 +2,15 @@
 	"name": "Node.js & TypeScript",
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:3.0.3-22@sha256:df90a1e397d6096285b6e0ae804c20f7c26a2234eb50245502993cf9bd1fa9e3",
 	"features": {
-		"ghcr.io/devcontainers-extra/features/act:1.0.15": {},
+		"ghcr.io/devcontainers/features/github-cli:1.0.15": {},
 		"ghcr.io/devcontainers-extra/features/pre-commit:2.0.18": {},
 		"ghcr.io/devcontainers-extra/features/shellcheck:1.0.0": {},
-		"ghcr.io/devcontainers-extra/features/uv:1.0.0": {},
-		"ghcr.io/devcontainers/features/github-cli:1.0.15": {},
+		"ghcr.io/devcontainers-extra/features/uv:1.0.0": {}
 	},
 	"postCreateCommand": {
+		"Enable corepack": "sudo corepack enable",
 		"Initialize pre-commit environment": "nohup sh -c 'pre-commit install -f --install-hooks &' < /dev/null > /dev/null 2>&1",
-		"Enable corepack": "sudo corepack enable"
+        "Install Gemini CLI": "npm install -g @google/gemini-cli"
 	},
 	"waitFor": "onCreateCommand",
 	"customizations": {
