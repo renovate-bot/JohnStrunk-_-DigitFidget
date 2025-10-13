@@ -35,10 +35,7 @@ repos:
         args: ["--fix", "--config", ".github/markdownlint-config.yaml"]
         exclude: |
           (?x)^(
-                .github/pull_request_template.md |
-                .github/prompts/.*\.md |
-                .specify/.*\.md |
-                specs/.*\.md
+                .github/pull_request_template.md
             )$
 
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
