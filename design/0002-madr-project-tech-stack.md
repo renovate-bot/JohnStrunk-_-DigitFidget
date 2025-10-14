@@ -21,6 +21,10 @@ The following tech stack was selected:
 - **TailwindCSS**: A utility-first CSS framework, chosen for its ability to
   rapidly build custom designs without leaving the HTML, and for promoting
   consistency and maintainability in styling.
+- **shadcn/ui**: A collection of accessible, customizable, and prebuilt UI
+  components for React, chosen to accelerate development, ensure design
+  consistency, and provide a modern user experience. Integrates seamlessly
+  with TailwindCSS.
 - **TypeScript**: A statically-typed superset of JavaScript, selected to
   improve code quality, enable better tooling, and catch errors at compile
   time.
@@ -37,7 +41,10 @@ The following tech stack was selected:
   well-suited for robust e2e testing.
 
 This combination provides a robust, scalable, and developer-friendly
-foundation for building modern web applications.
+foundation for building modern web applications. The addition of shadcn/ui
+further enhances productivity and UI consistency by offering a suite of
+ready-to-use, accessible components that follow best practices for modern web
+design.
 
 ## Other options considered
 
@@ -60,6 +67,7 @@ Related resources:
 - [React documentation](https://react.dev/)
 - [Vite documentation](https://vitejs.dev/)
 - [TailwindCSS documentation](https://tailwindcss.com/)
+- [shadcn/ui documentation](https://ui.shadcn.com/)
 - [TypeScript documentation](https://www.typescriptlang.org/)
 - [Yarn (Berry) documentation](https://yarnpkg.com/)
 - [Vitest documentation](https://vitest.dev/)
