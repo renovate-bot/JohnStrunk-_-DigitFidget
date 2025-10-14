@@ -10,8 +10,8 @@ project grows.
 
 ## Decision and justification
 
-All files in the repository must conform to the project's linting standards at
-all times.
+**All files in the repository must conform to the project's linting standards
+at all times.**
 
 The `.github/lint-all.sh` script is provided to perform linting across the
 entire repository. Any time changes are made to any file, this script must be
