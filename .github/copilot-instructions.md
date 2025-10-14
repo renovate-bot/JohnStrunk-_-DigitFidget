@@ -6,11 +6,11 @@ when making changes to this repository.
 ## Project architecture
 
 The major features and architectural decisions for this project are documented
-in the [`design/`](../design/) directory. Each feature and decision is captured
+in the [design directory](../design/). Each feature and decision is captured
 in a separate markdown file. These documents serve as a reference for
 understanding the rationale behind various design choices and provide context
-for future development.
-**All changes must be consistent with these documents.**
+for future development. **All changes must be consistent with these
+documents.**
 
 Before making changes to the repository or adding new code:
 
@@ -19,9 +19,17 @@ Before making changes to the repository or adding new code:
 - If requirements or instructions from the user are ambiguous or incomplete,
   ask clarifying questions before proceeding.
 
-After making ANY changes to the repository:
+## Rules
 
-- Ensure you follow the [linting
-  requirements](../design/0001-madr-linting-requirements-for-all.md) by
-  running the [`.github/lint-all.sh`](../.github/lint-all.sh) script and
-  fixing any resulting errors or warnings.
+Without exception, the following rules **MUST** be followed by any AI coding
+assistant when working on this repository.
+
+- **Rule001**: After editing any file, run the [linting
+  script](../.github/lint-all.sh) and fix any resulting errors or warnings.
+  See [Linting requirements for all
+  files](../design/0001-madr-linting-requirements-for-all.md) for details.
+- **Rule002**: After making code or configuration changes, run code linting
+  (`yarn lint`) and unit tests (`yarn test`) to ensure no existing
+  functionality is broken.
+- **Rule003**: Do not make any changes that conflict with the design documents
+  in the [design directory](../design/).
