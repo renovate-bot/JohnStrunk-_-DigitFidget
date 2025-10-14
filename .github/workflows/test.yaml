@@ -84,7 +84,7 @@ jobs:
         run: yarn run build
 
   success:
-    name: "Successful build"
+    name: "CI Workflow - Success"
     runs-on: ubuntu-latest
     needs: [build, pre-commit]
     steps:
