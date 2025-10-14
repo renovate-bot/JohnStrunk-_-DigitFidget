@@ -27,4 +27,13 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    files: ['vite.config.ts', 'vitest.config.ts'],
+    languageOptions: {
+      parserOptions: {
+        project: './tsconfig.config.json',
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
 ])
