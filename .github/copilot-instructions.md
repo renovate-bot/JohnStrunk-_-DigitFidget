@@ -18,3 +18,10 @@ Before making changes to the repository or adding new code:
   directory. Changes and additions must align with these documents.
 - If requirements or instructions from the user are ambiguous or incomplete,
   ask clarifying questions before proceeding.
+
+After making ANY changes to the repository:
+
+- Ensure you follow the [linting
+  requirements](../design/0001-madr-linting-requirements-for-all.md) by
+  running the [`.github/lint-all.sh`](../.github/lint-all.sh) script and
+  fixing any resulting errors or warnings.
