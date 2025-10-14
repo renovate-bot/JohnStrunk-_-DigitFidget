@@ -2542,7 +2542,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/type-utils@npm:8.46.1, @typescript-eslint/type-utils@npm:^8.0.0, @typescript-eslint/type-utils@npm:^8.46.0":
+"@typescript-eslint/type-utils@npm:8.46.1, @typescript-eslint/type-utils@npm:^8.0.0, @typescript-eslint/type-utils@npm:^8.46.1":
   version: 8.46.1
   resolution: "@typescript-eslint/type-utils@npm:8.46.1"
   dependencies:
@@ -3384,7 +3384,7 @@ __metadata:
     eslint-plugin-react-dom: "npm:2.2.2"
     eslint-plugin-react-hooks: "npm:7.0.0"
     eslint-plugin-react-refresh: "npm:0.4.23"
-    eslint-plugin-react-x: "npm:2.2.1"
+    eslint-plugin-react-x: "npm:2.2.2"
     globals: "npm:16.4.0"
     jsdom: "npm:27.0.0"
     react: "npm:19.2.0"
@@ -3766,19 +3766,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-x@npm:2.2.1":
-  version: 2.2.1
-  resolution: "eslint-plugin-react-x@npm:2.2.1"
+"eslint-plugin-react-x@npm:2.2.2":
+  version: 2.2.2
+  resolution: "eslint-plugin-react-x@npm:2.2.2"
   dependencies:
-    "@eslint-react/ast": "npm:2.2.1"
-    "@eslint-react/core": "npm:2.2.1"
-    "@eslint-react/eff": "npm:2.2.1"
-    "@eslint-react/shared": "npm:2.2.1"
-    "@eslint-react/var": "npm:2.2.1"
-    "@typescript-eslint/scope-manager": "npm:^8.46.0"
-    "@typescript-eslint/type-utils": "npm:^8.46.0"
-    "@typescript-eslint/types": "npm:^8.46.0"
-    "@typescript-eslint/utils": "npm:^8.46.0"
+    "@eslint-react/ast": "npm:2.2.2"
+    "@eslint-react/core": "npm:2.2.2"
+    "@eslint-react/eff": "npm:2.2.2"
+    "@eslint-react/shared": "npm:2.2.2"
+    "@eslint-react/var": "npm:2.2.2"
+    "@typescript-eslint/scope-manager": "npm:^8.46.1"
+    "@typescript-eslint/type-utils": "npm:^8.46.1"
+    "@typescript-eslint/types": "npm:^8.46.1"
+    "@typescript-eslint/utils": "npm:^8.46.1"
     compare-versions: "npm:^6.1.1"
     is-immutable-type: "npm:^5.0.1"
     string-ts: "npm:^2.2.1"
@@ -3787,7 +3787,7 @@ __metadata:
   peerDependencies:
     eslint: ^9.37.0
     typescript: ^5.9.3
-  checksum: 10c0/14b02b4811d18b46ae9629e43cceb3bf5b69e2f7d1787a8b52ee6bc8749f95ccfa9b348291b0c44cc9ebcb5688ac6cf8367fcbe8f1c7766944ed35ca378abe2f
+  checksum: 10c0/56412c5197c77ca82be312527f331f5f0e9641e6b10e336e1cc0af5b7b9c8be941e3eacad0e93dbe5d7ec0fc2fe6aeb38bb67375b755843a094a89813b3e1a58
   languageName: node
   linkType: hard
 
