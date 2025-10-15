@@ -1,20 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-button:hover {
-  border-color: #646cff;
+@theme {
+  /* Font families */
+  --default-font-family: 'VT323', monospace;
+  --font-body: 'VT323', monospace;
+  --font-display: 'Bungee', cursive;
+
+  /* EGA 16-color palette */
+  --color-ega-black: #000000;
+  --color-ega-blue: #0000AA;
+  --color-ega-green: #00AA00;
+  --color-ega-cyan: #00AAAA;
+  --color-ega-red: #AA0000;
+  --color-ega-magenta: #AA00AA;
+  --color-ega-brown: #AA5500;
+  --color-ega-light-gray: #AAAAAA;
+  --color-ega-dark-gray: #555555;
+  --color-ega-light-blue: #5555FF;
+  --color-ega-light-green: #55FF55;
+  --color-ega-light-cyan: #55FFFF;
+  --color-ega-light-red: #FF5555;
+  --color-ega-light-magenta: #FF55FF;
+  --color-ega-yellow: #FFFF55;
+  --color-ega-white: #FFFFFF;
+
+  /* Default theme colors */
+  --color-heading: var(--color-ega-yellow);
+  --color-background: var(--color-ega-black);
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+:root {
+  font-size: 16pt;
+  color: var(--color-ega-light-gray);
+  background-color: var(--color-ega-black);
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--color-ega-black);
+    background-color: var(--color-ega-white);
   }
 
   a:hover {
@@ -24,4 +48,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
