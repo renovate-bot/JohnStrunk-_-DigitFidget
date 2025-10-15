@@ -24,6 +24,35 @@ export default function DesignGuide() {
                             <span className="text-ega-yellow">yellow</span>,
                             <span className="text-ega-white">white</span>
                         </li>
+                        <li>
+                            <strong>Accessibility (WCAG AAA):</strong> The app meets WCAG AAA color contrast guidelines. For the EGA palette, the following combinations are acceptable:
+                            <ul className="mt-2 mb-2">
+                                <li>
+                                    On <span className="bg-ega-black px-1">black</span> backgrounds:
+                                    <span className="ml-2 bg-ega-black text-ega-cyan px-2 py-1 rounded">Cyan</span>
+                                    <span className="ml-2 bg-ega-black text-ega-light-gray px-2 py-1 rounded">Light gray</span>
+                                    <span className="ml-2 bg-ega-black text-ega-light-green px-2 py-1 rounded">Light green</span>
+                                    <span className="ml-2 bg-ega-black text-ega-light-cyan px-2 py-1 rounded">Light cyan</span>
+                                    <span className="ml-2 bg-ega-black text-ega-light-magenta px-2 py-1 rounded">Light magenta</span>
+                                    <span className="ml-2 bg-ega-black text-ega-yellow px-2 py-1 rounded">Yellow</span>
+                                    <span className="ml-2 bg-ega-black text-ega-white px-2 py-1 rounded">White</span>
+                                </li>
+                                <li>
+                                    On <span className="bg-ega-white px-1">white</span> backgrounds:
+                                    <span className="ml-2 bg-ega-white text-ega-blue px-2 py-1 rounded border border-ega-dark-gray">Blue</span>
+                                    <span className="ml-2 bg-ega-white text-ega-red px-2 py-1 rounded border border-ega-dark-gray">Red</span>
+                                    <span className="ml-2 bg-ega-white text-ega-dark-gray px-2 py-1 rounded border border-ega-dark-gray">Dark gray</span>
+                                </li>
+                                <li>
+                                    On <span className="bg-ega-red px-1 text-ega-white">red</span> backgrounds:
+                                    <span className="ml-2 bg-ega-red text-ega-white px-2 py-1 rounded">White</span>
+                                </li>
+                                <li>
+                                    On <span className="bg-ega-cyan px-1 text-ega-black">cyan</span> backgrounds:
+                                    <span className="ml-2 bg-ega-cyan text-ega-black px-2 py-1 rounded">Black</span>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </section>
 

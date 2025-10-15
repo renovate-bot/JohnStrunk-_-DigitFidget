@@ -7,6 +7,7 @@
   --font-display: 'Bungee', cursive;
 
   /* EGA 16-color palette */
+  /* Contrast grid: https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23000000%2C%20Black%0D%0A%230000AA%2C%20Blue%0D%0A%2300AA00%2C%20Green%0D%0A%2300AAAA%2C%20Cyan%0D%0A%23AA0000%2C%20Red%0D%0A%23AA00AA%2C%20Magenta%0D%0A%23AA5500%2C%20Brown%0D%0A%23AAAAAA%2C%20LtGray%0D%0A%23555555%2C%20DkGray%0D%0A%235555FF%2C%20LtBlue%0D%0A%2355FF55%2C%20LtGreen%0D%0A%2355FFFF%2C%20LtCyan%0D%0A%23FF5555%2C%20LtRed%0D%0A%23FF55FF%2C%20LtMagenta%0D%0A%23FFFF55%2C%20Yellow&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa */
   --color-ega-black: #000000;
   --color-ega-blue: #0000AA;
   --color-ega-green: #00AA00;
