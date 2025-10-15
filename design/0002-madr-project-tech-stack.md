@@ -18,9 +18,10 @@ The following tech stack was selected:
 - **Vite**: A fast build tool and development server, selected for its instant
   hot module replacement (HMR), minimal configuration, and superior
   performance compared to older tools like Webpack.
-- **TailwindCSS**: A utility-first CSS framework, chosen for its ability to
+- **TailwindCSS v4**: A utility-first CSS framework, chosen for its ability to
   rapidly build custom designs without leaving the HTML, and for promoting
-  consistency and maintainability in styling.
+  consistency and maintainability in styling. This project uses TailwindCSS
+  version 4.
 - **shadcn/ui**: A collection of accessible, customizable, and prebuilt UI
   components for React, chosen to accelerate development, ensure design
   consistency, and provide a modern user experience. Integrates seamlessly

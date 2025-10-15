@@ -15,7 +15,7 @@ MD013:  # Line length
   stern: true
   tables: false
 MD035:  # Horizontal rule
-  style: dash
+  style: '---'
 MD046:  # Code block style
   style: fenced
 MD048:  # Code fence style

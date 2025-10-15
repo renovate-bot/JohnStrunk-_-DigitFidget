@@ -33,3 +33,6 @@ assistant when working on this repository.
   functionality is broken.
 - **Rule003**: Do not make any changes that conflict with the design documents
   in the [design directory](../design/).
+- **Rule004**: Use context7 mcp to retrieve documentation. Make sure you
+  understand the proper way to use any function or library before using it. DO
+  NOT GUESS.
