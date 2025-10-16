@@ -25,14 +25,35 @@ Without exception, the following rules **MUST** be followed by any AI coding
 assistant when working on this repository.
 
 - **Rule001**: After editing any file, run the [linting
-  script](../.github/lint-all.sh) and fix any resulting errors or warnings.
-  See [Linting requirements for all
+  script](../.github/lint-all.sh) and fix ALL resulting errors and ALL
+  warnings. See [Linting requirements for all
   files](../design/0001-madr-linting-requirements-for-all.md) for details.
 - **Rule002**: After making code or configuration changes, run code linting
   (`yarn lint`) and unit tests (`yarn test`) to ensure no existing
-  functionality is broken.
+  functionality is broken. **ALL warnings, errors, and failing tests must be
+  fixed.**
 - **Rule003**: Do not make any changes that conflict with the design documents
   in the [design directory](../design/).
 - **Rule004**: Use context7 mcp to retrieve documentation. Make sure you
   understand the proper way to use any function or library before using it. DO
   NOT GUESS.
+- **Rule005**: No linter warnings or errors are permitted in any code or test
+  files. All linter warnings and errors must be immediately fixed. NO
+  EXCEPTIONS.
+
+## Code Structure
+
+All code and tests in this repository must follow these structuring rules:
+
+- **Test files** must be placed alongside their corresponding implementation
+  files, or in a dedicated `test` directory if the project structure requires
+  it. Duplicate test files are strictly prohibited.
+- There must be only one test file per logical module or feature. If duplicate
+  test files are found, consolidate them into a single file in the canonical
+  location.
+- Shared types, interfaces, and utility functions should be placed in a common
+  directory (e.g., `src/game/types.ts`) and imported where needed.
+- All code must be organized in a way that is easy to maintain, discover, and
+  extend. Avoid scattering related logic across multiple locations.
+- Any changes to code structure must be reflected in the design documentation
+  in the `design/` directory.
