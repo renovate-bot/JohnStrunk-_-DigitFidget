@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest';
 import App from './App';
 
 describe('App', () => {
-    it('renders Hello World', () => {
+    it('renders main menu', () => {
         render(<App />);
-        expect(screen.getByText(/hello world/i)).toBeInTheDocument();
+        expect(screen.getByText(/digit fidget/i)).toBeInTheDocument();
     });
 });

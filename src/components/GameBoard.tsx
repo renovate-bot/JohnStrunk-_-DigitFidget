@@ -10,9 +10,16 @@ export interface GameBoardProps {
 }
 
 export function GameBoard({ board, deltas, size, onCellToggle, className = "" }: GameBoardProps) {
+    // Dynamic grid style for columns and rows
+    const gridStyle: React.CSSProperties = {
+        display: "grid",
+        gridTemplateColumns: `repeat(${String(size + 1)}, minmax(0, 1fr))`,
+        gridTemplateRows: `repeat(${String(size + 1)}, minmax(0, 1fr))`,
+        gap: 0,
+    };
     return (
         <div className={`inline-block ${className}`.trim()}>
-            <div className={`grid grid-cols-${String(size + 1)} grid-rows-${String(size + 1)} gap-0`}>
+            <div style={gridStyle}>
                 {/* Board cells and row deltas */}
                 {board.map((rowArr, rowIdx) => (
                     <React.Fragment key={`row-${String(rowIdx)}`}>
