@@ -1,17 +1,7 @@
-describe('Game cell values', () => {
-    it('should only allow cell values 1-9', () => {
-        const options = { size: 4, seed: 123 };
-        const state = generateBoard(options);
-        for (const row of state.board) {
-            for (const cell of row) {
-                expect(cell.value).toBeGreaterThanOrEqual(1);
-                expect(cell.value).toBeLessThanOrEqual(9);
-            }
-        }
-    });
-});
 import { describe, expect, it } from 'vitest';
+
 import { calculateDeltas, calculateMoveCount, generateBoard, isWin, toggleCell } from './logic';
+
 
 describe('Digit Fidget Game Mechanics', () => {
     describe('Board Generation', () => {
@@ -42,6 +32,20 @@ describe('Digit Fidget Game Mechanics', () => {
             expect(a.board).not.toEqual(b.board);
         });
     });
+
+    describe('Game cell values', () => {
+        it('should only allow cell values 1-9', () => {
+            const options = { size: 4, seed: 123 };
+            const state = generateBoard(options);
+            for (const row of state.board) {
+                for (const cell of row) {
+                    expect(cell.value).toBeGreaterThanOrEqual(1);
+                    expect(cell.value).toBeLessThanOrEqual(9);
+                }
+            }
+        });
+    });
+
 
     describe('Cell Toggling and Deltas', () => {
         it('toggles a cell on and off', () => {

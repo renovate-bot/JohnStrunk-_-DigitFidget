@@ -1,5 +1,4 @@
-
-
+import pluginImport from 'eslint-plugin-import'
 import reactDom from 'eslint-plugin-react-dom'
 import reactX from 'eslint-plugin-react-x'
 import { defineConfig, globalIgnores } from 'eslint/config'
@@ -18,6 +17,9 @@ export default defineConfig([
       reactX.configs['recommended-typescript'],
       reactDom.configs.recommended,
     ],
+    plugins: {
+      import: pluginImport,
+    },
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
@@ -25,6 +27,9 @@ export default defineConfig([
       },
       ecmaVersion: 2020,
       globals: globals.browser,
+    },
+    rules: {
+      'import/first': 'error',
     },
   },
   {
