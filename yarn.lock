@@ -3538,7 +3538,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:3.2.4"
     autoprefixer: "npm:10.4.21"
     eslint: "npm:9.37.0"
-    eslint-plugin-import: "npm:^2.32.0"
+    eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-react-dom: "npm:2.2.1"
     eslint-plugin-react-hooks: "npm:7.0.0"
     eslint-plugin-react-refresh: "npm:0.4.24"
@@ -3920,7 +3920,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.32.0":
+"eslint-plugin-import@npm:2.32.0":
   version: 2.32.0
   resolution: "eslint-plugin-import@npm:2.32.0"
   dependencies:
