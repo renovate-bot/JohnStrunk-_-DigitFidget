@@ -40,6 +40,23 @@ assistant when working on this repository.
 - **Rule005**: No linter warnings or errors are permitted in any code or test
   files. All linter warnings and errors must be immediately fixed. NO
   EXCEPTIONS.
+- **Rule006**: When refactoring or adding UI elements, prefer creating
+   reusable components with clear props for style, content, and standard HTML
+   attributes. Update all usages to use the new component for consistency and
+   maintainability.
+- **Rule007**: All tests must use the project's configured test runner (e.g.,
+   Vitest). Do not mix APIs from other runners (e.g., Jest). Always import
+   mocks/functions (like `vi`) from the correct runner.
+- **Rule008**: When adding or updating tests, ensure all required testing
+   libraries and type definitions are installed and correctly referenced in
+   `package.json`.
+- **Rule009**: If lint or test errors occur after edits, immediately diagnose
+   and resolve them before proceeding. Common error sources include incorrect
+   imports, runner mismatches, or missing dependencies. Document fixes in
+   commit messages if non-obvious.
+- **Rule010**: All package management must be handled via `yarn`. Do not use
+   `npm` for installing, updating, or removing dependencies in this
+   repository.
 
 ## Code Structure
 

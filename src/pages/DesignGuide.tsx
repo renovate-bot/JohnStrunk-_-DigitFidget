@@ -1,5 +1,6 @@
-
-import React from "react";
+import Button from "../components/Button";
+import GameBoard from "../components/GameBoard";
+import type { Digit } from "../game/types";
 
 
 export default function DesignGuide() {
@@ -64,19 +65,11 @@ export default function DesignGuide() {
                     <div className="flex flex-col gap-4">
                         <div>
                             <span className="block mb-1 font-body text-ega-yellow">Primary Button</span>
-                            <button
-                                className="font-display px-3 py-1 border-4 border-ega-yellow bg-ega-black text-ega-yellow tracking-widest text-xs sm:text-base transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-ega-white pixel-shadow-yellow hover:bg-ega-yellow hover:text-ega-black hover:pixel-shadow-yellow-hover active:bg-ega-dark-gray active:text-ega-yellow active:pixel-shadow-yellow-active"
-                            >
-                                START GAME
-                            </button>
+                            <Button variant="primary">START GAME</Button>
                         </div>
                         <div>
                             <span className="block mb-1 font-body text-ega-cyan">Secondary Button</span>
-                            <button
-                                className="font-display px-3 py-1 border-4 border-ega-cyan bg-ega-black text-ega-cyan tracking-widest text-xs sm:text-base transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-ega-white pixel-shadow-cyan hover:bg-ega-cyan hover:text-ega-black hover:pixel-shadow-cyan-hover active:bg-ega-dark-gray active:text-ega-cyan active:pixel-shadow-cyan-active"
-                            >
-                                BACK
-                            </button>
+                            <Button variant="secondary">BACK</Button>
                         </div>
                     </div>
                 </section>
@@ -85,68 +78,16 @@ export default function DesignGuide() {
                     <h2 className="font-display mb-2 text-ega-yellow">Game Board Grid</h2>
                     <p className="mb-4">The grid below demonstrates a 3x3 Digit Fidget board. Each cell shows a digit (0-9) and can be toggled on/off. Deltas for each row and column are shown at the right and bottom, respectively.</p>
                     <div className="inline-block">
-                        <div className="grid grid-cols-4 grid-rows-4 gap-0">
-                            {/* Board cells and row deltas */}
-                            {/* Example board state: 1 = on, 0 = off */}
-                            {[
-                                [1, 0, 1],
-                                [0, 1, 0],
-                                [1, 1, 0],
-                            ].map((rowArr, rowIdx) => {
-                                const rowKey = `row-${rowArr.join('-')}`;
-                                return (
-                                    <React.Fragment key={rowKey}>
-                                        {rowArr.map((cell, colIdx) => (
-                                            <div
-                                                key={['cell', rowIdx.toString(), colIdx.toString(), cell ? 'on' : 'off'].join('-')}
-                                                className={
-                                                    `w-6 h-6 flex items-center justify-center font-body text-xs sm:w-8 sm:h-8 sm:text-base m-px ` +
-                                                    (
-                                                        cell
-                                                            ? 'border-t-4 border-t-ega-light-gray border-l-4 border-l-ega-light-gray border-b-4 border-b-ega-cyan border-r-4 border-r-ega-cyan bg-ega-yellow text-ega-black hover:bg-ega-light-gray'
-                                                            : 'border-t-4 border-t-ega-cyan border-l-4 border-l-ega-cyan border-b-4 border-b-ega-light-gray border-r-4 border-r-ega-light-gray bg-ega-dark-gray text-ega-yellow hover:bg-ega-blue'
-                                                    )
-                                                }
-                                            >
-                                                {cell ? 7 : 2}
-                                            </div>
-                                        ))}
-                                        {/* Row delta: negative, zero, positive */}
-                                        <div
-                                            key={['row-delta', rowIdx.toString(), String([-3, 0, 2][rowIdx])].join('-')}
-                                            className={
-                                                `w-6 h-6 flex items-center justify-center font-display text-xs sm:w-8 sm:h-8 sm:text-base ` +
-                                                ([-3, 0, 2][rowIdx] < 0
-                                                    ? 'text-ega-light-red bg-ega-black'
-                                                    : [-3, 0, 2][rowIdx] > 0
-                                                        ? 'text-ega-yellow bg-ega-black'
-                                                        : 'text-ega-light-green bg-ega-black')
-                                            }
-                                        >
-                                            {[-3, 0, 2][rowIdx] > 0 ? '+' : ''}{[-3, 0, 2][rowIdx]}
-                                        </div>
-                                    </React.Fragment>
-                                );
-                            })}
-                            {/* Column deltas: negative, zero, positive */}
-                            {[-2, 0, 4].map((delta, colIdx) => (
-                                <div
-                                    key={['col-delta', colIdx.toString(), String(delta)].join('-')}
-                                    className={
-                                        `w-6 h-6 flex items-center justify-center font-display text-xs sm:w-8 sm:h-8 sm:text-base ` +
-                                        (delta < 0
-                                            ? 'text-ega-light-red bg-ega-black'
-                                            : delta > 0
-                                                ? 'text-ega-yellow bg-ega-black'
-                                                : 'text-ega-light-green bg-ega-black')
-                                    }
-                                >
-                                    {delta > 0 ? '+' : ''}{delta}
-                                </div>
-                            ))}
-                            {/* Empty corner for alignment */}
-                            <div className="w-6 h-6 sm:w-8 sm:h-8"></div>
-                        </div>
+                        {/* Use GameBoard component for demo grid */}
+                        {(() => {
+                            const demoBoard = [
+                                [{ value: 7 as Digit, on: true }, { value: 2 as Digit, on: false }, { value: 7 as Digit, on: true }],
+                                [{ value: 2 as Digit, on: false }, { value: 7 as Digit, on: true }, { value: 2 as Digit, on: false }],
+                                [{ value: 7 as Digit, on: true }, { value: 7 as Digit, on: true }, { value: 2 as Digit, on: false }],
+                            ];
+                            const demoDeltas = { row: [-3, 0, 2], col: [-2, 0, 4] };
+                            return <GameBoard board={demoBoard} deltas={demoDeltas} size={3} />;
+                        })()}
                     </div>
                 </section>
 
@@ -154,16 +95,8 @@ export default function DesignGuide() {
                 <section className="mb-10">
                     <h2 className="font-display mb-2 text-ega-yellow">Controls</h2>
                     <div className="flex gap-4 mb-4">
-                        <button
-                            className="font-display px-3 py-1 border-4 border-ega-yellow bg-ega-black text-ega-yellow tracking-widest text-xs sm:text-base transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-ega-white pixel-shadow-yellow hover:bg-ega-yellow hover:text-ega-black hover:pixel-shadow-yellow-hover active:bg-ega-dark-gray active:text-ega-yellow active:pixel-shadow-yellow-active"
-                        >
-                            Start
-                        </button>
-                        <button
-                            className="font-display px-3 py-1 border-4 border-ega-cyan bg-ega-black text-ega-cyan tracking-widest text-xs sm:text-base transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-ega-white pixel-shadow-cyan hover:bg-ega-cyan hover:text-ega-black hover:pixel-shadow-cyan-hover active:bg-ega-dark-gray active:text-ega-cyan active:pixel-shadow-cyan-active"
-                        >
-                            Reset
-                        </button>
+                        <Button variant="primary">Start</Button>
+                        <Button variant="secondary">Reset</Button>
                     </div>
                     <div className="flex gap-8">
                         <div className="bg-ega-black border-r-2 border-b-2 border-r-ega-cyan border-b-ega-cyan font-body text-ega-cyan px-1 py-0.5">Time: 01:23</div>
@@ -180,11 +113,7 @@ export default function DesignGuide() {
                             <span>Moves: <span className="text-ega-yellow font-bold">12</span></span>
                             <span>Time: <span className="text-ega-yellow font-bold">01:23</span></span>
                         </div>
-                        <button
-                            className="font-display px-3 py-1 border-4 border-ega-yellow bg-ega-black text-ega-yellow tracking-widest text-xs sm:text-base transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-ega-white pixel-shadow-yellow hover:bg-ega-yellow hover:text-ega-black hover:pixel-shadow-yellow-hover active:bg-ega-dark-gray active:text-ega-yellow active:pixel-shadow-yellow-active"
-                        >
-                            OK
-                        </button>
+                        <Button variant="primary">OK</Button>
                     </div>
                 </section>
 
