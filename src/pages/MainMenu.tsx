@@ -10,7 +10,7 @@ export default function MainMenu() {
         { label: "Extreme", size: 10 },
     ];
     const handleStart = (size: number) => {
-        void navigate(`/game?difficulty=${String(size)}`);
+        void navigate(`game?difficulty=${String(size)}`);
     };
     return (
         <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8 bg-ega-black">

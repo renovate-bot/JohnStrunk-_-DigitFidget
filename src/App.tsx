@@ -5,14 +5,10 @@ import MainMenu from "./pages/MainMenu";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/DigitFidget">
       <Routes>
         <Route path="/design" element={<DesignGuide />} />
-        <Route path="/DigitFidget/design" element={<DesignGuide />} />
-        <Route path="/DigitFidget/design/" element={<DesignGuide />} />
         <Route path="/" element={<MainMenu />} />
-        <Route path="/DigitFidget" element={<MainMenu />} />
-        <Route path="/DigitFidget/" element={<MainMenu />} />
         <Route path="/game" element={<GameScreen />} />
       </Routes>
     </BrowserRouter>
