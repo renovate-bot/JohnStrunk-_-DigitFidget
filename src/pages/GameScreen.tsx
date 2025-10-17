@@ -40,7 +40,7 @@ export default function GameScreen() {
 
     const navigate = useNavigate();
     const goToMenu = () => {
-        void navigate("/");
+        void navigate("/"); // This is correct, as '/' is the root under basename
     };
 
     return (
