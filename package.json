@@ -35,7 +35,7 @@
     "eslint-plugin-react-refresh": "0.4.24",
     "eslint-plugin-react-x": "2.2.2",
     "globals": "16.4.0",
-    "jsdom": "27.0.0",
+    "jsdom": "27.0.1",
     "tailwindcss": "4.1.14",
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.1",
