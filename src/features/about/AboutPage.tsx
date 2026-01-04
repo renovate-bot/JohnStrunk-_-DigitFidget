@@ -2,86 +2,101 @@ import { Link } from "react-router-dom";
 
 export const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-gray-800">
+    <main className="min-h-screen bg-gray-50 p-4 sm:p-8 pb-24">
+      <div className="max-w-2xl mx-auto bg-white p-6 sm:p-10 rounded-2xl shadow-xl border border-gray-100">
+        <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+          <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight">
             About Digit Fidget
           </h1>
-          <Link
-            to="/"
-            className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-gray-700 transition-colors"
-          >
-            Back
-          </Link>
-        </div>
+          <nav className="hidden sm:block">
+            <Link
+              to="/"
+              className="px-6 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl text-gray-900 font-black transition-all active:scale-95"
+            >
+              Back
+            </Link>
+          </nav>
+        </header>
 
-        <div className="prose prose-blue max-w-none text-gray-700 space-y-4">
-          <p>
-            Digit Fidget is a single-player puzzle game where the objective is
-            to toggle digits on a grid to achieve a specific target
-            configuration. The grid is a square of size N x N, where each cell
-            contains a digit from 1 to 9. Each row and column have a target sum
-            that must be achieved by toggling the digits. A cell that is "off"
-            contributes 0 to the sum, while a cell that is "on" contributes its
-            digit value.
-          </p>
+        <div className="space-y-8 text-gray-800 leading-relaxed">
+          <section>
+            <p className="text-lg font-medium">
+              Digit Fidget is a single-player puzzle game where the objective is
+              to toggle digits on a grid to achieve a specific target
+              configuration.
+            </p>
+            <p className="mt-4">
+              The grid is a square of size N x N, where each cell
+              contains a digit from 1 to 9. Each row and column have a target sum
+              that must be achieved by toggling the digits. A cell that is "off"
+              contributes 0 to the sum, while a cell that is "on" contributes its
+              digit value.
+            </p>
+          </section>
 
-          <h2 className="text-xl font-semibold mt-4">Game generation</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              The game difficulties are defined by the size of the grid (N),
-              with larger grids being more challenging.
-            </li>
-            <li>
-              Each cell in the grid is initialized with a digit from 1 to 9.
-            </li>
-            <li>
-              To create a solvable puzzle, a random configuration of "on" and
-              "off" cells is generated, and the corresponding target sums for
-              each row and column are calculated based on this configuration.
-              This configured state is hidden from the player.
-            </li>
-            <li>All cells start in the "off" state when the game begins.</li>
-            <li>
-              This generation process ensures that there is at least one
-              solution to the puzzle.
-            </li>
-          </ul>
+          <section>
+            <h2 className="text-xl font-black text-primary-900 mb-4 flex items-center gap-2">
+              <span className="w-2 h-6 bg-primary-600 rounded-full"></span>
+              Game Generation
+            </h2>
+            <ul className="space-y-4">
+              <li className="flex gap-3">
+                <span className="text-primary-800 font-black">1.</span>
+                <span>The game difficulties are defined by the size of the grid,
+                with larger grids being more challenging.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-primary-800 font-black">2.</span>
+                <span>Each cell in the grid is initialized with a digit from 1 to 9.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-primary-800 font-black">3.</span>
+                <span>To ensure solvability, a target configuration is pre-calculated
+                and hidden from the player.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-primary-800 font-black">4.</span>
+                <span>This process guarantees that there is at least one
+                valid solution to every puzzle.</span>
+              </li>
+            </ul>
+          </section>
 
-          <h2 className="text-xl font-semibold mt-4">Winning conditions</h2>
-          <p>
-            The player wins the game by toggling the cells such that the sum of
-            the "on" digits in each row and each column matches the predefined
-            target sums. Any configuration that meets these conditions is
-            considered a valid solution.
-          </p>
+          <section>
+            <h2 className="text-xl font-black text-primary-900 mb-4 flex items-center gap-2">
+              <span className="w-2 h-6 bg-primary-600 rounded-full"></span>
+              Winning Conditions
+            </h2>
+            <p>
+              Match the sum of "on" digits in each row and column to their
+              respective targets. The "delta" display helps you track how far
+              you are from the goal.
+            </p>
+          </section>
 
-          <h2 className="text-xl font-semibold mt-4">Additional notes</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              The cell values and their states are visible to the player at all
-              times.
-            </li>
-            <li>
-              The player is shown the "delta" between the current sums and the
-              target sums for each row and column to help guide their decisions.
-              For example, if a row has a target sum of 15 and the current sum
-              of "on" digits is 10, the delta would be -5, because the player
-              needs to increase the sum by 5 to reach the target.
-            </li>
-          </ul>
-
-          <h2 className="text-xl font-semibold mt-4">Scoring</h2>
-          <p>
-            The player's score is the number of excess toggles taken to reach
-            the solution. The lower the number of excess toggles, the better the
-            score. Excess toggles are calculated as the total number of toggles
-            made minus the number of "on" cells in the solved configuration that
-            the player finds.
-          </p>
+          <section>
+            <h2 className="text-xl font-black text-primary-900 mb-4 flex items-center gap-2">
+              <span className="w-2 h-6 bg-primary-600 rounded-full"></span>
+              Scoring
+            </h2>
+            <p>
+              Your score is based on **excess toggles**. This is the total
+              number of moves minus the number of "on" cells in the solution.
+              Lower scores are better!
+            </p>
+          </section>
         </div>
       </div>
-    </div>
+
+      {/* Mobile bottom navigation */}
+      <nav className="sm:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-md border-t border-gray-200 flex justify-center z-40">
+        <Link
+          to="/"
+          className="w-full max-w-xs px-8 py-4 bg-primary-800 hover:bg-primary-900 text-white font-black rounded-xl text-center transition-all active:scale-95 shadow-lg text-lg"
+        >
+          Back to Menu
+        </Link>
+      </nav>
+    </main>
   );
 };

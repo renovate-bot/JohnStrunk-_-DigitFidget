@@ -28,7 +28,7 @@ export const GamePage = () => {
 
   if (!gameState) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen bg-gray-50 text-gray-900 font-bold">
         Loading...
       </div>
     );
@@ -59,63 +59,77 @@ export const GamePage = () => {
     : "";
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-50 p-4">
-      <div className="w-full max-w-4xl flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800">
+    <main className="flex flex-col items-center min-h-screen bg-gray-50 p-1 sm:p-4 pb-24">
+      <header className="w-full max-w-md flex flex-col sm:flex-row justify-between items-center mb-4 sm:mb-6 gap-2 sm:gap-4 px-2">
+        <h1 className="text-2xl sm:text-3xl font-black text-gray-900">
           {difficultyTitle} Puzzle
         </h1>
-        <div className="flex gap-4">
-          <div className="bg-white px-4 py-2 rounded shadow text-gray-700">
-            Moves: <span className="font-bold">{gameState.moves}</span>
-          </div>
-          <Link
-            to="/"
-            className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-gray-700 transition-colors"
-          >
-            Exit
-          </Link>
+        <div className="bg-white px-6 py-2 rounded-full shadow-md text-gray-900 font-black border-2 border-primary-100">
+          Moves: {gameState.moves}
         </div>
-      </div>
+      </header>
 
-      <GameBoard state={gameState} onToggle={handleToggle} />
+      <section className="w-full overflow-x-auto flex justify-center py-4">
+        <GameBoard state={gameState} onToggle={handleToggle} />
+      </section>
+
+      {/* Mobile-friendly bottom navigation */}
+      <nav className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-md border-t border-gray-200 flex justify-center gap-4 z-40">
+        <button
+          onClick={handleRestart}
+          className="flex-1 max-w-[160px] px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-xl transition-all active:scale-95 shadow-lg"
+        >
+          Restart
+        </button>
+        <Link
+          to="/"
+          className="flex-1 max-w-[160px] px-6 py-3 bg-primary-800 hover:bg-primary-900 text-white font-bold rounded-xl text-center transition-all active:scale-95 shadow-lg"
+        >
+          Exit
+        </Link>
+      </nav>
 
       {gameState.isWon && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-xl p-8 shadow-2xl max-w-sm w-full text-center animate-in fade-in zoom-in duration-300">
-            <h2 className="text-4xl font-bold text-blue-600 mb-2">Solved!</h2>
-            <p className="text-gray-600 mb-6">You matched all the targets.</p>
+        <div className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+          <section className="bg-white rounded-2xl p-8 shadow-2xl max-w-sm w-full text-center animate-in fade-in zoom-in duration-300 border-4 border-primary-200" role="alertdialog" aria-labelledby="won-title">
+            <h2 id="won-title" className="text-4xl font-black text-primary-900 mb-2">
+              Solved!
+            </h2>
+            <p className="text-gray-700 font-medium mb-6">
+              You matched all the targets.
+            </p>
 
-            <div className="bg-gray-100 p-4 rounded-lg mb-6 relative">
+            <div className="bg-primary-50 p-6 rounded-2xl mb-8 relative border-2 border-primary-100">
               {isHighScore && (
-                <div className="absolute -top-3 -right-3 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full shadow-md animate-bounce">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-950 text-xs font-black px-3 py-1 rounded-full shadow-md animate-bounce border-2 border-yellow-500 whitespace-nowrap">
                   NEW RECORD!
                 </div>
               )}
-              <p className="text-sm text-gray-500 uppercase tracking-wide">
+              <p className="text-xs text-primary-800 uppercase font-black tracking-widest mb-1">
                 Excess Toggles
               </p>
-              <p className="text-5xl font-bold text-gray-800">
+              <p className="text-6xl font-black text-gray-900">
                 {Math.max(0, calculateScore())}
               </p>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               <button
                 onClick={handleRestart}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                className="w-full bg-primary-800 hover:bg-primary-900 text-white font-black py-4 px-6 rounded-xl transition-all shadow-lg active:scale-95 text-lg"
               >
                 Play Again
               </button>
               <Link
                 to="/"
-                className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-6 rounded-lg transition-colors"
+                className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-black py-4 px-6 rounded-xl transition-all active:scale-95 text-lg"
               >
                 Back to Menu
               </Link>
             </div>
-          </div>
+          </section>
         </div>
       )}
-    </div>
+    </main>
   );
 };
