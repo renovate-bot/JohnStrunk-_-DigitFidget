@@ -1,30 +1,40 @@
 {
-	"name": "Node.js & TypeScript",
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:4.0.4-22@sha256:8f3fcad0ce98bbfe0acec0fade100b238b63fccc5f597db55def37431eaff279",
-	"features": {
-		"ghcr.io/devcontainers/features/github-cli:1.0.15": {},
-		"ghcr.io/devcontainers-extra/features/pre-commit:2.0.18": {},
-		"ghcr.io/devcontainers-extra/features/shellcheck:1.0.0": {},
-		"ghcr.io/devcontainers-extra/features/uv:1.0.2": {},
-		"ghcr.io/schlich/devcontainer-features/playwright:0.2.0": {}
-	},
-	"postCreateCommand": {
-		"Enable corepack": "sudo corepack enable",
-		"Initialize pre-commit environment": "nohup sh -c 'pre-commit install -f --install-hooks &' < /dev/null > /dev/null 2>&1",
-        "Install Gemini CLI": "npm install -g @google/gemini-cli"
-	},
-	"waitFor": "onCreateCommand",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"bradlc.vscode-tailwindcss",
-				"vitest.explorer",
-				"dbaeumer.vscode-eslint",
-				"ms-edgedevtools.vscode-edge-devtools",
-				"ms-playwright.playwright",
-				"GitHub.copilot",
-				"GitHub.copilot-chat"
-			]
-		}
-	}
+  "name": "Node.js & TypeScript",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:4.0.4-22@sha256:8f3fcad0ce98bbfe0acec0fade100b238b63fccc5f597db55def37431eaff279",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1.0.15": {},
+    "ghcr.io/devcontainers-extra/features/pre-commit:2.0.18": {},
+    "ghcr.io/devcontainers-extra/features/shellcheck:1.0.0": {},
+    "ghcr.io/devcontainers-extra/features/uv:1.0.2": {},
+    "ghcr.io/schlich/devcontainer-features/playwright:0.2.0": {
+      "browsers": "chromium"
+    }
+  },
+  "postCreateCommand": {
+    "Enable corepack": "sudo corepack enable && corepack install -g yarn",
+    "Initialize pre-commit environment": "nohup sh -c 'pre-commit install -f --install-hooks &' < /dev/null > /dev/null 2>&1",
+    "Install npm tools": "npm install -g --no-fund @google/gemini-cli markdownlint-cli"
+  },
+  "waitFor": "onCreateCommand",
+  "containerEnv": {
+    // Ensure UV cache is on the same volume for fast access
+    "UV_CACHE_DIR": "${containerWorkspaceFolder}/.uv_cache"
+  },
+  "mounts": [
+    // Map in user's Gemini config from host
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gemini,target=/home/node/.gemini,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "vitest.explorer",
+        "dbaeumer.vscode-eslint",
+        "ms-edgedevtools.vscode-edge-devtools",
+        "ms-playwright.playwright",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ]
+    }
+  }
 }

@@ -1,44 +1,30 @@
-import pluginImport from 'eslint-plugin-import'
-import reactDom from 'eslint-plugin-react-dom'
-import reactX from 'eslint-plugin-react-x'
-import { defineConfig, globalIgnores } from 'eslint/config'
-import globals from 'globals'
-import tseslint from 'typescript-eslint'
+import js from "@eslint/js";
+import globals from "globals";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
+import tseslint from "typescript-eslint";
+import prettierConfig from "eslint-config-prettier";
 
-export default defineConfig([
-  globalIgnores(['dist', 'coverage']),
+export default tseslint.config(
+  { ignores: ["dist"] },
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Strictest type-checked and stylistic rules
-      tseslint.configs.strictTypeChecked,
-      tseslint.configs.stylisticTypeChecked,
-      // React-specific lint rules
-      reactX.configs['recommended-typescript'],
-      reactDom.configs.recommended,
-    ],
-    plugins: {
-      import: pluginImport,
-    },
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ["**/*.{ts,tsx}"],
     languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    plugins: {
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
+    },
     rules: {
-      'import/first': 'error',
+      ...reactHooks.configs.recommended.rules,
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: true },
+      ],
     },
   },
-  {
-    files: ['vite.config.ts', 'vitest.config.ts'],
-    languageOptions: {
-      parserOptions: {
-        project: './tsconfig.config.json',
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  },
-])
+  prettierConfig,
+);

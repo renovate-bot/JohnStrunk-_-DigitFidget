@@ -1,0 +1,27 @@
+description = "Implement a feature based on an existing feature specification file."
+prompt = """
+# Implementing a Feature
+
+- Features are defined in specification files within the `design/` directory.
+- Implement the feature as specified in the provided feature specification file.
+- Write clean, maintainable, and well-documented code.
+- Ensure that the implementation adheres to best practices and coding standards.
+
+## Implementation strategy
+
+- Review the feature specification file thoroughly to understand the
+  requirements and expected outcomes.
+- Using TDD (Test-Driven Development) principles, write unit tests for the
+  feature before implementing the actual code.
+- Implement the feature incrementally, working through the development tasks
+  outlined in the specification one at a time. Use a to-do list to track
+  progress.
+- After completing the implementation, review the code for quality, readability,
+  and adherence to the specification.
+- Follow the test plan provided in the specification to verify that the feature
+  works as intended and meets all requirements.
+- Validate that every requirement is covered by tests, ensuring that the
+  feature is robust and reliable.
+- When writing tests, annotate each test case with a comment that references
+  the specific feature and requirement it is intended to validate.
+"""

@@ -11,15 +11,15 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
-      - id: check-added-large-files  # Prevents giant files from being committed
+      - id: check-added-large-files # Prevents giant files from being committed
       # - id: check-json               # Check that JSON files are valid
-      - id: check-merge-conflict     # Check merge conflict strings
-      - id: check-symlinks           # Ensure symlinks have a valid target
-      - id: check-toml               # Ensure toml files are valid
-      - id: check-xml                # Check that XML files are valid
-      - id: end-of-file-fixer        # File is empty or ends with one newline
-      - id: fix-byte-order-marker    # Forbid utf-8 byte order marker
-      - id: trailing-whitespace      # Trims trailing whitespace
+      - id: check-merge-conflict # Check merge conflict strings
+      - id: check-symlinks # Ensure symlinks have a valid target
+      - id: check-toml # Ensure toml files are valid
+      - id: check-xml # Check that XML files are valid
+      - id: end-of-file-fixer # File is empty or ends with one newline
+      - id: fix-byte-order-marker # Forbid utf-8 byte order marker
+      - id: trailing-whitespace # Trims trailing whitespace
         args: [--markdown-linebreak-ext=md]
 
   - repo: https://github.com/adrienverge/yamllint
@@ -38,19 +38,29 @@ repos:
                 .github/pull_request_template.md
             )$
 
-  - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: "3.0.0"
+  - repo: https://github.com/Mergifyio/mergify-pre-commit
+    rev: "1.1.0"
     hooks:
-      - id: shellcheck
-        exclude: |
-          (?x)^(
-                .specify/scripts/bash/.*
-            )$
+      - id: validate-mergify-config-location
+      - id: validate-mergify-config
 
   - repo: https://github.com/renovatebot/pre-commit-hooks
     rev: "42.66.11"
     hooks:
       - id: renovate-config-validator
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.9.0.6
+    hooks:
+      - id: shellcheck
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      # Prevent secrets from being committed
+      - id: detect-secrets
+      #  args: ['--baseline', '.secrets.baseline']
+      #  exclude: package.lock.json
 
   - repo: https://gitlab.com/bmares/check-json5
     rev: "v1.0.1"
