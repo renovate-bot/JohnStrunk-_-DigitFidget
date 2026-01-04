@@ -1,5 +1,5 @@
-import { Difficulty } from "../game/types";
-import { HighScoreEntry, HighScores } from "./types";
+import type { Difficulty } from "../game/types";
+import type { HighScoreEntry, HighScores } from "./types";
 
 const STORAGE_KEY = "digit-fidget-high-scores";
 const MAX_SCORES = 10;

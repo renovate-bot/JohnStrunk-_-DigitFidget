@@ -1,4 +1,4 @@
-import { Cell, GameState } from "./types";
+import type { Cell, GameState } from "./types";
 
 export const generatePuzzle = (size: number): GameState => {
   const grid: Cell[][] = [];

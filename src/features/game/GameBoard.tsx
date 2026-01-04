@@ -1,5 +1,5 @@
 import React from "react";
-import { GameState } from "./types";
+import type { GameState } from "./types";
 import { Cell } from "./Cell";
 
 interface GameBoardProps {

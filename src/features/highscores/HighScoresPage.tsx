@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Difficulty } from "../game/types";
+import type { Difficulty } from "../game/types";
 import { getHighScores } from "./scoreStorage";
 
 export const HighScoresPage = () => {

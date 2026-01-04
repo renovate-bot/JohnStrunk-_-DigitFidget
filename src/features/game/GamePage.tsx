@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { Difficulty, DIFFICULTY_CONFIG, GameState } from "./types";
+import { DIFFICULTY_CONFIG } from "./types";
+import type { Difficulty, GameState } from "./types";
 import { generatePuzzle, toggleCell } from "./gameLogic";
 import { GameBoard } from "./GameBoard";
 import { saveScore } from "../highscores/scoreStorage";

@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { GamePage } from "./GamePage";
 import * as gameLogic from "./gameLogic";
-import { GameState } from "./types";
+import type { GameState } from "./types";
 
 // Mock the generatePuzzle to return a predictable state
 const mockGeneratePuzzle = vi.spyOn(gameLogic, "generatePuzzle");

@@ -1,4 +1,4 @@
-import { Cell as CellType } from "./types";
+import type { Cell as CellType } from "./types";
 
 interface CellProps {
   cell: CellType;

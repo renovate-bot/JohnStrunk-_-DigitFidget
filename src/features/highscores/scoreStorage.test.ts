@@ -4,7 +4,7 @@ describe("scoreStorage", () => {
   beforeEach(() => {
     localStorage.clear();
     // Mock crypto.randomUUID
-    Object.defineProperty(global, "crypto", {
+    Object.defineProperty(globalThis, "crypto", {
       value: {
         randomUUID: () => Math.random().toString(),
       },

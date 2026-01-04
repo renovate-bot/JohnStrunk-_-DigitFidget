@@ -1,4 +1,4 @@
-import { Difficulty } from "../game/types";
+import type { Difficulty } from "../game/types";
 
 export interface HighScoreEntry {
   id: string;
