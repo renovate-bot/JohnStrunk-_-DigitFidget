@@ -22,24 +22,24 @@ and deploy the new application.
 ## Requirements
 
 1. **Project Initialization:** The project must be initialized with Vite, using
-    React 19+ and TypeScript 5+.
+   React 19+ and TypeScript 5+.
 2. **Package Management:** `yarn` must be used for dependency management and
-    script execution.
+   script execution.
 3. **Styling:** Tailwind CSS must be installed and configured for
-    utility-first styling.
+   utility-first styling.
 4. **Linting & Formatting:** ESLint and Prettier must be configured.
-    `yarn lint` and `yarn format` scripts must be available and pass.
+   `yarn lint` and `yarn format` scripts must be available and pass.
 5. **Unit Testing:** Vitest and React Testing Library must be set up. A
-    `yarn test` script must run unit tests.
+   `yarn test` script must run unit tests.
 6. **E2E Testing:** Playwright must be configured for end-to-end testing.
 7. **PWA Support:** The application must be configured as a PWA with a valid
-    web manifest and service worker (using `vite-plugin-pwa`) to support
-    installation and offline usage.
+   web manifest and service worker (using `vite-plugin-pwa`) to support
+   installation and offline usage.
 8. **Build Artifacts:** `yarn build` must generate a production-ready build in
-    the `dist/` directory.
+   the `dist/` directory.
 9. **CI/CD Integration:** The existing `.github/workflows/deploy.yaml` and
-    `.github/workflows/test.yaml` must successfully execute the project's build
-    and test scripts.
+   `.github/workflows/test.yaml` must successfully execute the project's build
+   and test scripts.
 10. **Landing Page:** The application must render a basic landing page (e.g.,
     title screen) to verify successful setup.
 

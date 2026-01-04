@@ -4,26 +4,26 @@
 
 default: true
 
-MD003:  # Heading style
+MD003: # Heading style
   style: atx
-MD004:  # Unordered list style
+MD004: # Unordered list style
   style: dash
-MD009:  # Trailing spaces
-  strict: true  # Hard-break 2 spaces must cause a line break
-MD013:  # Line length
+MD009: # Trailing spaces
+  strict: true # Hard-break 2 spaces must cause a line break
+MD013: # Line length
   code_blocks: false
   stern: true
   tables: false
-MD035:  # Horizontal rule
-  style: '---'
-MD046:  # Code block style
+MD035: # Horizontal rule
+  style: "---"
+MD046: # Code block style
   style: fenced
-MD048:  # Code fence style
+MD048: # Code fence style
   style: backtick
-MD049:  # Emphasis style
+MD049: # Emphasis style
   style: asterisk
-MD050:  # Strong style
+MD050: # Strong style
   style: asterisk
-MD060:  # Table column style
+MD060: # Table column style
   aligned_delimiter: false
   style: any

@@ -11,7 +11,7 @@ pull_request_rules:
 
 queue_rules:
   - name: default
-    batch_size: 1  # Don't combine PRs into draft multi-merge PRs
+    batch_size: 1 # Don't combine PRs into draft multi-merge PRs
     merge_conditions: []
     merge_method: merge
     queue_conditions:

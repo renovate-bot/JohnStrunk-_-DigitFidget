@@ -1,16 +1,14 @@
 ---
 # https://vite.dev/guide/static-deploy.html#github-pages
 name: Build & Deploy
-on:  # yamllint disable-line rule:truthy
+on: # yamllint disable-line rule:truthy
   push:
     branches: [main]
   workflow_dispatch:
 
-
 concurrency:
   group: "pages"
   cancel-in-progress: true
-
 
 jobs:
   build:
@@ -70,7 +68,7 @@ jobs:
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
         with:
           # Upload dist folder
-          path: './dist'
+          path: "./dist"
 
       # https://github.com/actions/deploy-pages
       - name: Deploy to GitHub Pages
