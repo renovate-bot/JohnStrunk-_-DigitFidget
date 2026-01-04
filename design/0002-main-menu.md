@@ -19,25 +19,25 @@ will navigate to a placeholder view for now.
 
 1. **Route:** The main menu must be displayed at the root path (`/`).
 2. **Title:** The application title "Digit Fidget" must be prominent and
-    visible on the main menu.
+   visible on the main menu.
 3. **Difficulty Selection:**
-    - There must be four distinct buttons labeled "Easy", "Medium", "Hard",
-        and "Extreme".
-    - Clicking a difficulty button should navigate to a game route (e.g.,
-        `/game/easy`, `/game/medium`, etc.) or a placeholder for now.
+   - There must be four distinct buttons labeled "Easy", "Medium", "Hard",
+     and "Extreme".
+   - Clicking a difficulty button should navigate to a game route (e.g.,
+     `/game/easy`, `/game/medium`, etc.) or a placeholder for now.
 4. **About Section:**
-    - There must be an "About" button on the main menu.
-    - Clicking the "About" button must navigate to the `/about` route.
-    - The `/about` page must display the full game rules text (derived from the
-        project instructions).
-    - The `/about` page must include a "Back" button that returns the user to
-        the main menu (`/`).
+   - There must be an "About" button on the main menu.
+   - Clicking the "About" button must navigate to the `/about` route.
+   - The `/about` page must display the full game rules text (derived from the
+     project instructions).
+   - The `/about` page must include a "Back" button that returns the user to
+     the main menu (`/`).
 5. **High Scores:**
-    - There must be a "High Scores" button on the main menu.
-    - Clicking the button must navigate to the `/high-scores` route (which can
-        be empty or a placeholder).
+   - There must be a "High Scores" button on the main menu.
+   - Clicking the button must navigate to the `/high-scores` route (which can
+     be empty or a placeholder).
 6. **Styling:** The menu should be visually distinct, using the existing
-    Tailwind CSS setup.
+   Tailwind CSS setup.
 
 ## Development tasks
 
