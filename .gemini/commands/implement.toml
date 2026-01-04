@@ -2,6 +2,7 @@ description = "Implement a feature based on an existing feature specification fi
 prompt = """
 # Implementing a Feature
 
+- Features are defined in specification files within the `design/` directory.
 - Implement the feature as specified in the provided feature specification file.
 - Write clean, maintainable, and well-documented code.
 - Ensure that the implementation adheres to best practices and coding standards.
