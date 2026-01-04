@@ -3,10 +3,12 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { Difficulty, DIFFICULTY_CONFIG, GameState } from "./types";
 import { generatePuzzle, toggleCell } from "./gameLogic";
 import { GameBoard } from "./GameBoard";
+import { saveScore } from "../highscores/scoreStorage";
 
 export const GamePage = () => {
   const { difficulty } = useParams<{ difficulty: string }>();
   const [gameState, setGameState] = useState<GameState | null>(null);
+  const [isHighScore, setIsHighScore] = useState(false);
 
   // Validate difficulty
   const config = DIFFICULTY_CONFIG[difficulty as Difficulty];
@@ -15,6 +17,7 @@ export const GamePage = () => {
     if (config) {
       // eslint-disable-next-line
       setGameState(generatePuzzle(config.size));
+      setIsHighScore(false);
     }
   }, [difficulty, config]);
 
@@ -23,11 +26,23 @@ export const GamePage = () => {
   }
 
   if (!gameState) {
-    return <div className="flex items-center justify-center min-h-screen">Loading...</div>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        Loading...
+      </div>
+    );
   }
 
   const handleToggle = (row: number, col: number) => {
-    setGameState((prev) => prev ? toggleCell(prev, row, col) : null);
+    if (!gameState) return;
+    const newState = toggleCell(gameState, row, col);
+    setGameState(newState);
+
+    if (newState.isWon && !gameState.isWon && difficulty) {
+      const score = newState.moves - newState.solutionOnCount;
+      const isNewHigh = saveScore(difficulty as Difficulty, Math.max(0, score));
+      setIsHighScore(isNewHigh);
+    }
   };
 
   const handleRestart = () => {
@@ -38,17 +53,21 @@ export const GamePage = () => {
     return gameState.moves - gameState.solutionOnCount;
   };
 
-  const difficultyTitle = difficulty ? difficulty.charAt(0).toUpperCase() + difficulty.slice(1) : "";
+  const difficultyTitle = difficulty
+    ? difficulty.charAt(0).toUpperCase() + difficulty.slice(1)
+    : "";
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-50 p-4">
       <div className="w-full max-w-4xl flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800">{difficultyTitle} Puzzle</h1>
+        <h1 className="text-3xl font-bold text-gray-800">
+          {difficultyTitle} Puzzle
+        </h1>
         <div className="flex gap-4">
-           <div className="bg-white px-4 py-2 rounded shadow text-gray-700">
-             Moves: <span className="font-bold">{gameState.moves}</span>
-           </div>
-           <Link
+          <div className="bg-white px-4 py-2 rounded shadow text-gray-700">
+            Moves: <span className="font-bold">{gameState.moves}</span>
+          </div>
+          <Link
             to="/"
             className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-gray-700 transition-colors"
           >
@@ -65,9 +84,18 @@ export const GamePage = () => {
             <h2 className="text-4xl font-bold text-blue-600 mb-2">Solved!</h2>
             <p className="text-gray-600 mb-6">You matched all the targets.</p>
 
-            <div className="bg-gray-100 p-4 rounded-lg mb-6">
-              <p className="text-sm text-gray-500 uppercase tracking-wide">Excess Toggles</p>
-              <p className="text-5xl font-bold text-gray-800">{Math.max(0, calculateScore())}</p>
+            <div className="bg-gray-100 p-4 rounded-lg mb-6 relative">
+              {isHighScore && (
+                <div className="absolute -top-3 -right-3 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full shadow-md animate-bounce">
+                  NEW RECORD!
+                </div>
+              )}
+              <p className="text-sm text-gray-500 uppercase tracking-wide">
+                Excess Toggles
+              </p>
+              <p className="text-5xl font-bold text-gray-800">
+                {Math.max(0, calculateScore())}
+              </p>
             </div>
 
             <div className="flex flex-col gap-3">

@@ -1,4 +1,4 @@
-export type Difficulty = 'easy' | 'medium' | 'hard' | 'extreme';
+export type Difficulty = "easy" | "medium" | "hard" | "extreme";
 
 export interface Cell {
   id: string; // unique identifier (e.g., "row-col")

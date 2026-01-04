@@ -58,7 +58,11 @@ export const generatePuzzle = (size: number): GameState => {
   };
 };
 
-export const toggleCell = (state: GameState, row: number, col: number): GameState => {
+export const toggleCell = (
+  state: GameState,
+  row: number,
+  col: number,
+): GameState => {
   if (state.isWon) return state;
 
   const newGrid = state.grid.map((r, rIdx) => {

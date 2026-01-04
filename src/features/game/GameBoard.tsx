@@ -33,19 +33,28 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
           {/* Row Stats */}
           <div className="flex items-center px-4 min-w-[100px]">
             <div className="flex flex-col">
-              <span className="text-xs text-gray-500 uppercase font-bold">Target</span>
-              <span className="text-xl font-bold text-gray-800">{state.rowTargets[rowIndex]}</span>
+              <span className="text-xs text-gray-500 uppercase font-bold">
+                Target
+              </span>
+              <span className="text-xl font-bold text-gray-800">
+                {state.rowTargets[rowIndex]}
+              </span>
 
               <div className="flex items-center gap-1 mt-1">
-                 <span className="text-xs text-gray-500">Δ</span>
-                 <span className={`font-mono font-bold ${
-                   state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] === 0
-                     ? "text-green-600"
-                     : "text-red-500"
-                 }`}>
-                    {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] > 0 ? "+" : ""}
-                    {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex]}
-                 </span>
+                <span className="text-xs text-gray-500">Δ</span>
+                <span
+                  className={`font-mono font-bold ${
+                    state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] ===
+                    0
+                      ? "text-green-600"
+                      : "text-red-500"
+                  }`}
+                >
+                  {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] > 0
+                    ? "+"
+                    : ""}
+                  {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex]}
+                </span>
               </div>
             </div>
           </div>
@@ -54,21 +63,32 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
 
       {/* Column Stats */}
       {Array.from({ length: size }).map((_, colIndex) => (
-        <div key={`col-stat-${colIndex}`} className="flex flex-col items-center pt-2">
-            <span className="text-xs text-gray-500 uppercase font-bold">Target</span>
-            <span className="text-xl font-bold text-gray-800">{state.colTargets[colIndex]}</span>
+        <div
+          key={`col-stat-${colIndex}`}
+          className="flex flex-col items-center pt-2"
+        >
+          <span className="text-xs text-gray-500 uppercase font-bold">
+            Target
+          </span>
+          <span className="text-xl font-bold text-gray-800">
+            {state.colTargets[colIndex]}
+          </span>
 
-            <div className="flex items-center gap-1 mt-1">
-               <span className="text-xs text-gray-500">Δ</span>
-               <span className={`font-mono font-bold ${
-                 state.colCurrent[colIndex] - state.colTargets[colIndex] === 0
-                   ? "text-green-600"
-                   : "text-red-500"
-               }`}>
-                  {state.colCurrent[colIndex] - state.colTargets[colIndex] > 0 ? "+" : ""}
-                  {state.colCurrent[colIndex] - state.colTargets[colIndex]}
-               </span>
-            </div>
+          <div className="flex items-center gap-1 mt-1">
+            <span className="text-xs text-gray-500">Δ</span>
+            <span
+              className={`font-mono font-bold ${
+                state.colCurrent[colIndex] - state.colTargets[colIndex] === 0
+                  ? "text-green-600"
+                  : "text-red-500"
+              }`}
+            >
+              {state.colCurrent[colIndex] - state.colTargets[colIndex] > 0
+                ? "+"
+                : ""}
+              {state.colCurrent[colIndex] - state.colTargets[colIndex]}
+            </span>
+          </div>
         </div>
       ))}
 
