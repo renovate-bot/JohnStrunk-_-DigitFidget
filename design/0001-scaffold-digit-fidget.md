@@ -45,18 +45,18 @@ and deploy the new application.
 
 ## Development tasks
 
-- [ ] Initialize the Vite project with React and TypeScript templates.
-- [ ] Install and configure Tailwind CSS, PostCSS, and Autoprefixer.
-- [ ] Configure ESLint and Prettier according to project standards.
-- [ ] Install and configure Vitest and React Testing Library; create a sample
+- [x] Initialize the Vite project with React and TypeScript templates.
+- [x] Install and configure Tailwind CSS, PostCSS, and Autoprefixer.
+- [x] Configure ESLint and Prettier according to project standards.
+- [x] Install and configure Vitest and React Testing Library; create a sample
       unit test.
-- [ ] Install and configure Playwright; create a sample E2E test.
-- [ ] Install `vite-plugin-pwa` and configure the web manifest and service
+- [x] Install and configure Playwright; create a sample E2E test.
+- [x] Install `vite-plugin-pwa` and configure the web manifest and service
       worker.
-- [ ] Create a basic `App.tsx` component to serve as the landing page.
-- [ ] Update `package.json` to include standard scripts: `dev`, `build`,
+- [x] Create a basic `App.tsx` component to serve as the landing page.
+- [x] Update `package.json` to include standard scripts: `dev`, `build`,
       `preview`, `lint`, `format`, `test`.
-- [ ] Verify `tsconfig.json` and `vite.config.ts` settings.
+- [x] Verify `tsconfig.json` and `vite.config.ts` settings.
 
 ## Test plan
 
