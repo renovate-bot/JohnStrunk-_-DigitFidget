@@ -24,3 +24,6 @@ MD049:  # Emphasis style
   style: asterisk
 MD050:  # Strong style
   style: asterisk
+MD060:  # Table column style
+  aligned_delimiter: false
+  style: any
