@@ -6,7 +6,7 @@ import { GamePage } from "./features/game/GamePage";
 
 function App() {
   return (
-    <BrowserRouter basename="/DigitFidget">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<MainMenu />} />
         <Route path="/about" element={<AboutPage />} />
