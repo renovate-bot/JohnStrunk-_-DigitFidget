@@ -2,9 +2,10 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 
 describe("App", () => {
-  it("renders the landing page", () => {
+  it("renders the main menu by default", () => {
+    window.history.pushState({}, "Test page", "/");
     render(<App />);
     expect(screen.getByText("Digit Fidget")).toBeInTheDocument();
-    expect(screen.getByText("A number puzzle game.")).toBeInTheDocument();
+    expect(screen.getByText("Easy")).toBeInTheDocument();
   });
 });

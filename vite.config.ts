@@ -1,11 +1,11 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: "/DigitFidget/",
+export default defineConfig(({ mode }) => ({
+  base: mode === "production" ? "/DigitFidget/" : "/",
   plugins: [
     react(),
     VitePWA({
@@ -37,4 +37,4 @@ export default defineConfig({
     setupFiles: "./src/setupTests.ts",
     include: ["src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
   },
-});
+}));

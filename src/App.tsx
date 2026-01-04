@@ -1,11 +1,20 @@
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { MainMenu } from "./features/menu/MainMenu";
+import { AboutPage } from "./features/about/AboutPage";
+import { HighScoresPage } from "./features/highscores/HighScoresPage";
+import { GamePage } from "./features/game/GamePage";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-        <h1 className="text-4xl font-bold text-blue-600 mb-4">Digit Fidget</h1>
-        <p className="text-gray-700">A number puzzle game.</p>
-      </div>
-    </div>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <Routes>
+        <Route path="/" element={<MainMenu />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/high-scores" element={<HighScoresPage />} />
+        <Route path="/game/:difficulty" element={<GamePage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
