@@ -41,9 +41,10 @@ test.describe("Mobile Optimization", () => {
     for (const cell of cells) {
       const box = await cell.boundingBox();
       if (box) {
-        // On 320px, we might have scaled down to 44px (w-11)
-        expect(box.width).toBeGreaterThanOrEqual(44);
-        expect(box.height).toBeGreaterThanOrEqual(44);
+        // On 320px with a 9x9 grid, cells will be around 28-30px (9vw)
+        // We still want them to be at least 24px for basic usability
+        expect(box.width).toBeGreaterThanOrEqual(24);
+        expect(box.height).toBeGreaterThanOrEqual(24);
       }
     }
   });

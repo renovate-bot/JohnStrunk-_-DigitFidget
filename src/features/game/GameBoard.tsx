@@ -32,7 +32,7 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
 
           {/* Row Stats */}
           <div className="flex items-center justify-center px-px sm:px-2">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white/60 rounded-full">
+            <div className="w-[9vw] h-[9vw] max-w-[44px] max-h-[44px] sm:w-12 sm:h-12 flex items-center justify-center bg-white/60 rounded-full">
               <span
                 className={`text-lg sm:text-xl font-black ${
                   state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] === 0
@@ -58,7 +58,7 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
           key={`col-stat-${colIndex}`}
           className="flex flex-col items-center justify-center pt-1 sm:pt-2"
         >
-          <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white/60 rounded-full">
+          <div className="w-[9vw] h-[9vw] max-w-[44px] max-h-[44px] sm:w-12 sm:h-12 flex items-center justify-center bg-white/60 rounded-full">
             <span
               className={`text-lg sm:text-xl font-black ${
                 state.colCurrent[colIndex] - state.colTargets[colIndex] === 0

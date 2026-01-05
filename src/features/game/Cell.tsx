@@ -12,9 +12,10 @@ export const Cell = ({ cell, onClick, disabled }: CellProps) => {
       onClick={onClick}
       disabled={disabled}
       className={`
-        w-11 h-11 sm:w-14 sm:h-14 md:w-16 md:h-16
+        w-[9vw] h-[9vw] max-w-[44px] max-h-[44px]
+        sm:w-14 sm:h-14 md:w-16 md:h-16
         flex items-center justify-center
-        text-xl md:text-2xl font-bold
+        text-lg sm:text-xl md:text-2xl font-bold
         rounded-lg transition-all duration-200
         ${
           cell.isOn
