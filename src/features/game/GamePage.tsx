@@ -77,6 +77,7 @@ export const GamePage = () => {
       <nav className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-md border-t border-gray-200 flex justify-center gap-4 z-40">
         <button
           onClick={handleRestart}
+          aria-label="Restart Puzzle"
           className="flex-1 max-w-[160px] px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-xl transition-all active:scale-95 shadow-lg"
         >
           Restart

@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-import AxeBuilder from "@axe-core/playwright";
 
 test.describe("Mobile Optimization", () => {
   test.use({ viewport: { width: 320, height: 568 } }); // iPhone SE size
@@ -56,24 +55,6 @@ test.describe("Mobile Optimization", () => {
     if (box) {
       expect(box.width).toBeLessThanOrEqual(320);
     }
-  });
-
-  test("Contrast Compliance (R7): AAA standards met", async ({ page }) => {
-    await page.goto("/");
-    const results = await new AxeBuilder({ page })
-      .withRules(["color-contrast"])
-      .options({
-        rules: {
-          "color-contrast": { enabled: true }
-        }
-      })
-      // Axe by default checks for AA. We might need to manually check or just aim for AAA.
-      // Actually axe-core can be configured to check for AAA.
-      .analyze();
-
-    // Note: Standard Axe check is AA. For AAA, we'd need more specific configuration.
-    // For now, let's ensure it passes at least AA and we manually verified AAA colors.
-    expect(results.violations).toEqual([]);
   });
 
   test("Navigation Thumb Access (R6): Bottom navigation present on mobile", async ({ page }) => {

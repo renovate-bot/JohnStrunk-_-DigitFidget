@@ -93,7 +93,7 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
       ))}
 
       {/* Bottom Right Empty Corner */}
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center" aria-hidden="true">
         <div className="w-4 h-4 rounded-full bg-gray-300"></div>
       </div>
     </div>
