@@ -33,7 +33,7 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
           {/* Row Stats */}
           <div className="flex items-center justify-center px-0.5 sm:px-4 min-w-[36px] sm:min-w-[64px]">
             <span
-              className={`text-lg sm:text-xl font-mono font-black ${
+              className={`text-lg sm:text-xl font-black ${
                 state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] === 0
                   ? "text-green-800"
                   : "text-red-700"
@@ -55,7 +55,7 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
           className="flex flex-col items-center justify-center pt-1 sm:pt-2"
         >
           <span
-            className={`text-lg sm:text-xl font-mono font-black ${
+            className={`text-lg sm:text-xl font-black ${
               state.colCurrent[colIndex] - state.colTargets[colIndex] === 0
                 ? "text-green-800"
                 : "text-red-700"
