@@ -31,21 +31,23 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
           ))}
 
           {/* Row Stats */}
-          <div className="flex items-center justify-center px-0.5 sm:px-4 min-w-[36px] sm:min-w-[64px]">
-            <span
-              className={`text-lg sm:text-xl font-black ${
-                state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] === 0
-                  ? "text-green-900"
-                  : state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] > 0
-                    ? "text-red-900"
-                    : "text-blue-900"
-              }`}
-            >
-              {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] > 0
-                ? "+"
-                : ""}
-              {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex]}
-            </span>
+          <div className="flex items-center justify-center px-px sm:px-2">
+            <div className="w-11 h-11 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/90 rounded-lg flex items-center justify-center shadow-sm border border-gray-300">
+              <span
+                className={`text-lg sm:text-xl font-black ${
+                  state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] === 0
+                    ? "text-green-700"
+                    : state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] > 0
+                      ? "text-red-700"
+                      : "text-blue-700"
+                }`}
+              >
+                {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] > 0
+                  ? "+"
+                  : ""}
+                {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex]}
+              </span>
+            </div>
           </div>
         </React.Fragment>
       ))}
@@ -56,20 +58,22 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
           key={`col-stat-${colIndex}`}
           className="flex flex-col items-center justify-center pt-1 sm:pt-2"
         >
-          <span
-            className={`text-lg sm:text-xl font-black ${
-              state.colCurrent[colIndex] - state.colTargets[colIndex] === 0
-                ? "text-green-900"
-                : state.colCurrent[colIndex] - state.colTargets[colIndex] > 0
-                  ? "text-red-900"
-                  : "text-blue-900"
-            }`}
-          >
-            {state.colCurrent[colIndex] - state.colTargets[colIndex] > 0
-              ? "+"
-              : ""}
-            {state.colCurrent[colIndex] - state.colTargets[colIndex]}
-          </span>
+          <div className="w-11 h-11 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/90 rounded-lg flex items-center justify-center shadow-sm border border-gray-300">
+            <span
+              className={`text-lg sm:text-xl font-black ${
+                state.colCurrent[colIndex] - state.colTargets[colIndex] === 0
+                  ? "text-green-700"
+                  : state.colCurrent[colIndex] - state.colTargets[colIndex] > 0
+                    ? "text-red-700"
+                    : "text-blue-700"
+              }`}
+            >
+              {state.colCurrent[colIndex] - state.colTargets[colIndex] > 0
+                ? "+"
+                : ""}
+              {state.colCurrent[colIndex] - state.colTargets[colIndex]}
+            </span>
+          </div>
         </div>
       ))}
 
