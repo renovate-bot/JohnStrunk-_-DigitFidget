@@ -55,13 +55,14 @@ describe("GamePage", () => {
       screen.getByRole("button", { name: /Toggle value 3/i }),
     ).toBeInTheDocument();
 
-    // Check for targets (text content)
-    // We expect multiple '5's (one in grid, one in target)
-    const fives = screen.getAllByText("5");
-    expect(fives.length).toBeGreaterThanOrEqual(1);
+    // Check for deltas (text content)
+    // We expect '-5' (row 2 delta), '-8' (col 1 delta), '-3' (col 2 delta)
+    expect(screen.getByText("-5")).toBeInTheDocument();
+    expect(screen.getByText("-8")).toBeInTheDocument();
+    expect(screen.getByText("-3")).toBeInTheDocument();
 
-    // Target 6 should be present
-    expect(screen.getByText("6")).toBeInTheDocument();
+    // Delta -6 should be present
+    expect(screen.getByText("-6")).toBeInTheDocument();
   });
 
   it("redirects to home for invalid difficulty", () => {
