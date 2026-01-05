@@ -18,7 +18,7 @@ export const Cell = ({ cell, onClick, disabled }: CellProps) => {
         rounded-lg transition-all duration-200
         ${
           cell.isOn
-            ? "bg-primary-800 text-white shadow-inner scale-95"
+            ? "bg-primary-800 text-white shadow-inner scale-95 hover:bg-primary-900 active:bg-primary-950"
             : "bg-white text-gray-800 shadow-md hover:bg-gray-50 active:bg-gray-100"
         }
         ${disabled ? "cursor-default opacity-90" : "cursor-pointer active:scale-90"}
