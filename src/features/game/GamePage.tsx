@@ -84,7 +84,7 @@ export const GamePage = () => {
         </button>
         <Link
           to="/"
-          className="flex-1 max-w-[160px] px-6 py-3 bg-primary-800 hover:bg-primary-900 text-white font-bold rounded-xl text-center transition-all active:scale-95 shadow-lg"
+          className="flex-1 max-w-[160px] px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold rounded-xl text-center transition-all active:scale-95 shadow-lg border-2 border-gray-200"
         >
           Exit
         </Link>

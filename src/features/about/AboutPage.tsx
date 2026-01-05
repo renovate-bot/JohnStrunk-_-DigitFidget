@@ -92,7 +92,7 @@ export const AboutPage = () => {
       <nav className="sm:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-md border-t border-gray-200 flex justify-center z-40">
         <Link
           to="/"
-          className="w-full max-w-xs px-8 py-4 bg-primary-800 hover:bg-primary-900 text-white font-black rounded-xl text-center transition-all active:scale-95 shadow-lg text-lg"
+          className="w-full max-w-xs px-8 py-4 bg-gray-100 hover:bg-gray-200 text-gray-900 font-black rounded-xl text-center transition-all active:scale-95 shadow-lg text-lg border-2 border-gray-200"
         >
           Back to Menu
         </Link>
