@@ -22,7 +22,7 @@ export const MainMenu = () => {
         </Link>
         <Link
           to="/game/hard"
-          className="bg-orange-800 hover:bg-orange-900 text-white font-bold py-4 px-6 rounded-xl text-center shadow-md transition-all active:scale-95 text-lg"
+          className="bg-orange-900 hover:bg-orange-950 text-white font-bold py-4 px-6 rounded-xl text-center shadow-md transition-all active:scale-95 text-lg"
         >
           Hard
         </Link>

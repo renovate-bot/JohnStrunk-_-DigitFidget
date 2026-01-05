@@ -35,8 +35,8 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
             <span
               className={`text-lg sm:text-xl font-black ${
                 state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] === 0
-                  ? "text-green-800"
-                  : "text-red-700"
+                  ? "text-green-900"
+                  : "text-red-900"
               }`}
             >
               {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] > 0
@@ -57,8 +57,8 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
           <span
             className={`text-lg sm:text-xl font-black ${
               state.colCurrent[colIndex] - state.colTargets[colIndex] === 0
-                ? "text-green-800"
-                : "text-red-700"
+                ? "text-green-900"
+                : "text-red-900"
             }`}
           >
             {state.colCurrent[colIndex] - state.colTargets[colIndex] > 0

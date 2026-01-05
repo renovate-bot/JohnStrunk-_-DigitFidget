@@ -22,7 +22,7 @@ export const HighScoresPage = () => {
             className={`flex-1 min-w-[80px] px-3 py-2 rounded-lg capitalize transition-all font-black text-sm ${
               difficulty === diff
                 ? "bg-white text-primary-800 shadow-md"
-                : "text-gray-700 hover:text-gray-900 hover:bg-gray-300"
+                : "text-gray-900 hover:text-black hover:bg-gray-300"
             }`}
             aria-pressed={difficulty === diff}
           >
@@ -38,13 +38,13 @@ export const HighScoresPage = () => {
           <table className="w-full">
             <thead className="bg-gray-50 border-b-2 border-gray-100">
               <tr>
-                <th className="py-4 px-6 text-left text-xs font-black text-gray-500 uppercase tracking-widest">
+                <th className="py-4 px-6 text-left text-xs font-black text-gray-800 uppercase tracking-widest">
                   Rank
                 </th>
-                <th className="py-4 px-6 text-right text-xs font-black text-gray-500 uppercase tracking-widest">
+                <th className="py-4 px-6 text-right text-xs font-black text-gray-800 uppercase tracking-widest">
                   Excess Toggles
                 </th>
-                <th className="py-4 px-6 text-right text-xs font-black text-gray-500 uppercase tracking-widest">
+                <th className="py-4 px-6 text-right text-xs font-black text-gray-800 uppercase tracking-widest">
                   Date
                 </th>
               </tr>
@@ -59,7 +59,7 @@ export const HighScoresPage = () => {
                     <td className="py-4 px-6 text-right text-gray-900 font-black text-lg">
                       {score.score}
                     </td>
-                    <td className="py-4 px-6 text-right text-gray-600 font-medium text-sm">
+                    <td className="py-4 px-6 text-right text-gray-800 font-bold text-sm">
                       {new Date(score.date).toLocaleDateString()}
                     </td>
                   </tr>
@@ -68,7 +68,7 @@ export const HighScoresPage = () => {
                 <tr>
                   <td
                     colSpan={3}
-                    className="py-12 text-center text-gray-400 italic font-medium"
+                    className="py-12 text-center text-gray-800 italic font-medium"
                   >
                     No scores yet for this difficulty.
                   </td>
@@ -84,11 +84,11 @@ export const HighScoresPage = () => {
             scores.map((score, index) => (
               <div key={score.id} className="p-4 flex justify-between items-center">
                 <div className="flex items-center gap-4">
-                  <span className="text-2xl font-black text-primary-800/20">
+                  <span className="text-2xl font-black text-primary-800/30">
                     {index + 1}
                   </span>
                   <div>
-                    <p className="text-xs font-black text-gray-500 uppercase tracking-widest">
+                    <p className="text-xs font-black text-gray-800 uppercase tracking-widest">
                       Excess Toggles
                     </p>
                     <p className="text-2xl font-black text-gray-900">
@@ -97,17 +97,17 @@ export const HighScoresPage = () => {
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">
+                  <p className="text-[10px] font-black text-gray-700 uppercase tracking-widest">
                     Date
                   </p>
-                  <p className="text-sm font-bold text-gray-600">
+                  <p className="text-sm font-black text-gray-800">
                     {new Date(score.date).toLocaleDateString()}
                   </p>
                 </div>
               </div>
             ))
           ) : (
-            <div className="py-12 text-center text-gray-400 italic font-medium">
+            <div className="py-12 text-center text-gray-800 italic font-medium">
               No scores yet for this difficulty.
             </div>
           )}
