@@ -77,6 +77,8 @@ development standards.
   cross-browser verification.
 - **Mocking:** Use `MSW` (Mock Service Worker) for API mocking in both tests
   and development.
+- **Efficient Test Suites:** Ensure tests are fast, reliable, and provide
+  meaningful coverage without redundancy.
 
 ## Critical reminders
 
