@@ -10,77 +10,128 @@ export const HighScoresPage = () => {
   const difficulties: Difficulty[] = ["easy", "medium", "hard", "extreme"];
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-50 p-8">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8">High Scores</h1>
+    <main className="flex flex-col items-center min-h-screen bg-gray-50 p-4 sm:p-8 pb-24">
+      <h1 className="text-4xl font-black text-gray-900 mb-8">High Scores</h1>
 
       {/* Difficulty Tabs */}
-      <div className="flex gap-2 mb-8 bg-gray-200 p-1 rounded-lg">
+      <nav
+        className="flex flex-wrap justify-center gap-2 mb-8 bg-gray-200 p-1.5 rounded-xl w-full max-w-md"
+        aria-label="Difficulty Selection"
+      >
         {difficulties.map((diff) => (
           <button
             key={diff}
             onClick={() => setDifficulty(diff)}
-            className={`px-4 py-2 rounded-md capitalize transition-colors ${
+            className={`flex-1 min-w-[80px] px-3 py-2 rounded-lg capitalize transition-all font-black text-sm ${
               difficulty === diff
-                ? "bg-white text-blue-600 font-bold shadow-sm"
-                : "text-gray-600 hover:text-gray-800 hover:bg-gray-300"
+                ? "bg-white text-primary-800 shadow-md"
+                : "text-gray-900 hover:text-black hover:bg-gray-300"
             }`}
+            aria-pressed={difficulty === diff}
           >
             {diff}
           </button>
         ))}
-      </div>
+      </nav>
 
-      {/* Scores Table */}
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md overflow-hidden mb-8">
-        <table className="w-full">
-          <thead className="bg-gray-100 border-b">
-            <tr>
-              <th className="py-3 px-4 text-left text-xs font-bold text-gray-500 uppercase">
-                Rank
-              </th>
-              <th className="py-3 px-4 text-right text-xs font-bold text-gray-500 uppercase">
-                Excess Toggles
-              </th>
-              <th className="py-3 px-4 text-right text-xs font-bold text-gray-500 uppercase">
-                Date
-              </th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-100">
-            {scores.length > 0 ? (
-              scores.map((score, index) => (
-                <tr key={score.id} className="hover:bg-gray-50">
-                  <td className="py-3 px-4 text-gray-800 font-medium">
-                    #{index + 1}
-                  </td>
-                  <td className="py-3 px-4 text-right text-gray-800 font-bold">
-                    {score.score}
-                  </td>
-                  <td className="py-3 px-4 text-right text-gray-500 text-sm">
-                    {new Date(score.date).toLocaleDateString()}
+      {/* Scores View */}
+      <section className="w-full max-w-md bg-white rounded-2xl shadow-lg overflow-hidden mb-8 border border-gray-100">
+        {/* Table for desktop/tablet */}
+        <div className="hidden sm:block">
+          <table className="w-full">
+            <thead className="bg-gray-50 border-b-2 border-gray-100">
+              <tr>
+                <th className="py-4 px-6 text-left text-xs font-black text-gray-800 uppercase tracking-widest">
+                  Rank
+                </th>
+                <th className="py-4 px-6 text-right text-xs font-black text-gray-800 uppercase tracking-widest">
+                  Excess Toggles
+                </th>
+                <th className="py-4 px-6 text-right text-xs font-black text-gray-800 uppercase tracking-widest">
+                  Date
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {scores.length > 0 ? (
+                scores.map((score, index) => (
+                  <tr
+                    key={score.id}
+                    className="hover:bg-primary-50/30 transition-colors"
+                  >
+                    <td className="py-4 px-6 text-gray-900 font-black">
+                      #{index + 1}
+                    </td>
+                    <td className="py-4 px-6 text-right text-gray-900 font-black text-lg">
+                      {score.score}
+                    </td>
+                    <td className="py-4 px-6 text-right text-gray-800 font-bold text-sm">
+                      {new Date(score.date).toLocaleDateString()}
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td
+                    colSpan={3}
+                    className="py-12 text-center text-gray-800 italic font-medium"
+                  >
+                    No scores yet for this difficulty.
                   </td>
                 </tr>
-              ))
-            ) : (
-              <tr>
-                <td
-                  colSpan={3}
-                  className="py-8 text-center text-gray-400 italic"
-                >
-                  No scores yet for this difficulty.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+              )}
+            </tbody>
+          </table>
+        </div>
 
-      <Link
-        to="/"
-        className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors"
-      >
-        Back to Menu
-      </Link>
-    </div>
+        {/* List for mobile */}
+        <div className="sm:hidden divide-y divide-gray-100">
+          {scores.length > 0 ? (
+            scores.map((score, index) => (
+              <div
+                key={score.id}
+                className="p-4 flex justify-between items-center"
+              >
+                <div className="flex items-center gap-4">
+                  <span className="text-2xl font-black text-primary-800/30">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <p className="text-xs font-black text-gray-800 uppercase tracking-widest">
+                      Excess Toggles
+                    </p>
+                    <p className="text-2xl font-black text-gray-900">
+                      {score.score}
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-[10px] font-black text-gray-700 uppercase tracking-widest">
+                    Date
+                  </p>
+                  <p className="text-sm font-black text-gray-800">
+                    {new Date(score.date).toLocaleDateString()}
+                  </p>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="py-12 text-center text-gray-800 italic font-medium">
+              No scores yet for this difficulty.
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Thumb-friendly back button */}
+      <nav className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-md border-t border-gray-200 flex justify-center z-40">
+        <Link
+          to="/"
+          className="w-full max-w-xs px-8 py-4 bg-gray-100 hover:bg-gray-200 text-gray-900 font-black rounded-xl text-center transition-all active:scale-95 shadow-lg text-lg border-2 border-gray-200"
+        >
+          Back to Menu
+        </Link>
+      </nav>
+    </main>
   );
 };

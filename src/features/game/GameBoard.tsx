@@ -12,10 +12,10 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
 
   return (
     <div
-      className="grid gap-2 p-4 bg-gray-200 rounded-xl shadow-lg"
+      data-testid="game-board"
+      className="grid gap-px sm:gap-2 p-0.5 sm:p-4 bg-gray-200 rounded-xl shadow-lg w-fit mx-auto"
       style={{
-        gridTemplateColumns: `repeat(${size}, min-content) auto`,
-        gridTemplateRows: `repeat(${size}, min-content) auto`,
+        gridTemplateColumns: `repeat(${size}, min-content) min-content`,
       }}
     >
       {/* Grid Cells and Row Stats */}
@@ -31,31 +31,23 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
           ))}
 
           {/* Row Stats */}
-          <div className="flex items-center px-4 min-w-[100px]">
-            <div className="flex flex-col">
-              <span className="text-xs text-gray-500 uppercase font-bold">
-                Target
+          <div className="flex items-center justify-center px-px sm:px-2">
+            <div className="w-[9vw] h-[9vw] max-w-[44px] max-h-[44px] sm:w-12 sm:h-12 flex items-center justify-center bg-white/60 rounded-full">
+              <span
+                className={`text-lg sm:text-xl font-black ${
+                  state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] === 0
+                    ? "text-green-700"
+                    : state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] >
+                        0
+                      ? "text-red-700"
+                      : "text-blue-700"
+                }`}
+              >
+                {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] > 0
+                  ? "+"
+                  : ""}
+                {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex]}
               </span>
-              <span className="text-xl font-bold text-gray-800">
-                {state.rowTargets[rowIndex]}
-              </span>
-
-              <div className="flex items-center gap-1 mt-1">
-                <span className="text-xs text-gray-500">Δ</span>
-                <span
-                  className={`font-mono font-bold ${
-                    state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] ===
-                    0
-                      ? "text-green-600"
-                      : "text-red-500"
-                  }`}
-                >
-                  {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex] > 0
-                    ? "+"
-                    : ""}
-                  {state.rowCurrent[rowIndex] - state.rowTargets[rowIndex]}
-                </span>
-              </div>
             </div>
           </div>
         </React.Fragment>
@@ -65,22 +57,16 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
       {Array.from({ length: size }).map((_, colIndex) => (
         <div
           key={`col-stat-${colIndex}`}
-          className="flex flex-col items-center pt-2"
+          className="flex flex-col items-center justify-center pt-1 sm:pt-2"
         >
-          <span className="text-xs text-gray-500 uppercase font-bold">
-            Target
-          </span>
-          <span className="text-xl font-bold text-gray-800">
-            {state.colTargets[colIndex]}
-          </span>
-
-          <div className="flex items-center gap-1 mt-1">
-            <span className="text-xs text-gray-500">Δ</span>
+          <div className="w-[9vw] h-[9vw] max-w-[44px] max-h-[44px] sm:w-12 sm:h-12 flex items-center justify-center bg-white/60 rounded-full">
             <span
-              className={`font-mono font-bold ${
+              className={`text-lg sm:text-xl font-black ${
                 state.colCurrent[colIndex] - state.colTargets[colIndex] === 0
-                  ? "text-green-600"
-                  : "text-red-500"
+                  ? "text-green-700"
+                  : state.colCurrent[colIndex] - state.colTargets[colIndex] > 0
+                    ? "text-red-700"
+                    : "text-blue-700"
               }`}
             >
               {state.colCurrent[colIndex] - state.colTargets[colIndex] > 0
@@ -93,7 +79,9 @@ export const GameBoard = ({ state, onToggle }: GameBoardProps) => {
       ))}
 
       {/* Bottom Right Empty Corner */}
-      <div></div>
+      <div className="flex items-center justify-center" aria-hidden="true">
+        <div className="w-4 h-4 rounded-full bg-gray-300"></div>
+      </div>
     </div>
   );
 };

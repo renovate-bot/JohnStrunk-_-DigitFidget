@@ -22,8 +22,8 @@ export interface GameState {
 }
 
 export const DIFFICULTY_CONFIG: Record<Difficulty, GameConfig> = {
-  easy: { size: 3 },
-  medium: { size: 4 },
-  hard: { size: 5 },
-  extreme: { size: 6 },
+  easy: { size: 6 },
+  medium: { size: 7 },
+  hard: { size: 8 },
+  extreme: { size: 9 },
 };
