@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif,
+  --font-sans:
+    "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   --color-primary-50: #eff6ff;

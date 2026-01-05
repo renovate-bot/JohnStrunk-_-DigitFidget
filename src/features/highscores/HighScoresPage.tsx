@@ -14,7 +14,10 @@ export const HighScoresPage = () => {
       <h1 className="text-4xl font-black text-gray-900 mb-8">High Scores</h1>
 
       {/* Difficulty Tabs */}
-      <nav className="flex flex-wrap justify-center gap-2 mb-8 bg-gray-200 p-1.5 rounded-xl w-full max-w-md" aria-label="Difficulty Selection">
+      <nav
+        className="flex flex-wrap justify-center gap-2 mb-8 bg-gray-200 p-1.5 rounded-xl w-full max-w-md"
+        aria-label="Difficulty Selection"
+      >
         {difficulties.map((diff) => (
           <button
             key={diff}
@@ -52,7 +55,10 @@ export const HighScoresPage = () => {
             <tbody className="divide-y divide-gray-100">
               {scores.length > 0 ? (
                 scores.map((score, index) => (
-                  <tr key={score.id} className="hover:bg-primary-50/30 transition-colors">
+                  <tr
+                    key={score.id}
+                    className="hover:bg-primary-50/30 transition-colors"
+                  >
                     <td className="py-4 px-6 text-gray-900 font-black">
                       #{index + 1}
                     </td>
@@ -82,7 +88,10 @@ export const HighScoresPage = () => {
         <div className="sm:hidden divide-y divide-gray-100">
           {scores.length > 0 ? (
             scores.map((score, index) => (
-              <div key={score.id} className="p-4 flex justify-between items-center">
+              <div
+                key={score.id}
+                className="p-4 flex justify-between items-center"
+              >
                 <div className="flex items-center gap-4">
                   <span className="text-2xl font-black text-primary-800/30">
                     {index + 1}

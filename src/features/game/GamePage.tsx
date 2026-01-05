@@ -92,8 +92,15 @@ export const GamePage = () => {
 
       {gameState.isWon && (
         <div className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-          <section className="bg-white rounded-2xl p-8 shadow-2xl max-w-sm w-full text-center animate-in fade-in zoom-in duration-300 border-4 border-primary-200" role="alertdialog" aria-labelledby="won-title">
-            <h2 id="won-title" className="text-4xl font-black text-primary-900 mb-2">
+          <section
+            className="bg-white rounded-2xl p-8 shadow-2xl max-w-sm w-full text-center animate-in fade-in zoom-in duration-300 border-4 border-primary-200"
+            role="alertdialog"
+            aria-labelledby="won-title"
+          >
+            <h2
+              id="won-title"
+              className="text-4xl font-black text-primary-900 mb-2"
+            >
               Solved!
             </h2>
             <p className="text-gray-700 font-medium mb-6">

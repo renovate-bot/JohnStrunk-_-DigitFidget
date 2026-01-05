@@ -26,11 +26,11 @@ export const AboutPage = () => {
               configuration.
             </p>
             <p className="mt-4">
-              The grid is a square of size N x N, where each cell
-              contains a digit from 1 to 9. Each row and column have a target sum
-              that must be achieved by toggling the digits. A cell that is "off"
-              contributes 0 to the sum, while a cell that is "on" contributes its
-              digit value.
+              The grid is a square of size N x N, where each cell contains a
+              digit from 1 to 9. Each row and column have a target sum that must
+              be achieved by toggling the digits. A cell that is "off"
+              contributes 0 to the sum, while a cell that is "on" contributes
+              its digit value.
             </p>
           </section>
 
@@ -42,22 +42,30 @@ export const AboutPage = () => {
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <span className="text-primary-800 font-black">1.</span>
-                <span>The game difficulties are defined by the size of the grid,
-                with larger grids being more challenging.</span>
+                <span>
+                  The game difficulties are defined by the size of the grid,
+                  with larger grids being more challenging.
+                </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary-800 font-black">2.</span>
-                <span>Each cell in the grid is initialized with a digit from 1 to 9.</span>
+                <span>
+                  Each cell in the grid is initialized with a digit from 1 to 9.
+                </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary-800 font-black">3.</span>
-                <span>To ensure solvability, a target configuration is pre-calculated
-                and hidden from the player.</span>
+                <span>
+                  To ensure solvability, a target configuration is
+                  pre-calculated and hidden from the player.
+                </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary-800 font-black">4.</span>
-                <span>This process guarantees that there is at least one
-                valid solution to every puzzle.</span>
+                <span>
+                  This process guarantees that there is at least one valid
+                  solution to every puzzle.
+                </span>
               </li>
             </ul>
           </section>

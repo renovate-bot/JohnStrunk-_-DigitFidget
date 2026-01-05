@@ -36,17 +36,17 @@ high-quality experience on mobile devices.
 ## Development tasks
 
 - [x] Review and update global CSS and Tailwind config for mobile-first
-  defaults.
+      defaults.
 - [x] Audit and adjust color palette to ensure WCAG 2.0 AAA contrast compliance.
 - [x] Implement responsive layout for `MainMenu.tsx` using flexbox/grid.
 - [x] Adjust `GameBoard.tsx` to use dynamic sizing for the digit grid based on
-  viewport width.
+      viewport width.
 - [x] Update `Cell.tsx` to ensure touch targets are appropriately sized and
-  provide visual feedback on tap.
+      provide visual feedback on tap.
 - [x] Refactor `HighScoresPage.tsx` to use a mobile-friendly table or list view.
 - [x] Refactor `AboutPage.tsx` for improved readability on narrow screens.
 - [x] Verify responsiveness using browser developer tools across various device
-  presets.
+      presets.
 
 ## Test plan
 

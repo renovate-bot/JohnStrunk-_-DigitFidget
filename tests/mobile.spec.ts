@@ -3,25 +3,37 @@ import { test, expect } from "@playwright/test";
 test.describe("Mobile Optimization", () => {
   test.use({ viewport: { width: 320, height: 568 } }); // iPhone SE size
 
-  test("Viewport Integrity (R1, R5): No horizontal scrolling on Main Menu", async ({ page }) => {
+  test("Viewport Integrity (R1, R5): No horizontal scrolling on Main Menu", async ({
+    page,
+  }) => {
     await page.goto("/");
     const horizontalScrollable = await page.evaluate(() => {
-      return document.documentElement.scrollWidth > document.documentElement.clientWidth;
+      return (
+        document.documentElement.scrollWidth >
+        document.documentElement.clientWidth
+      );
     });
     expect(horizontalScrollable).toBe(false);
   });
 
-  test("Viewport Integrity (R1, R5): No horizontal scrolling on Game Page (Extreme)", async ({ page }) => {
+  test("Viewport Integrity (R1, R5): No horizontal scrolling on Game Page (Extreme)", async ({
+    page,
+  }) => {
     await page.goto("/game/extreme");
     const horizontalScrollable = await page.evaluate(() => {
-      return document.documentElement.scrollWidth > document.documentElement.clientWidth;
+      return (
+        document.documentElement.scrollWidth >
+        document.documentElement.clientWidth
+      );
     });
     // We expect no horizontal scrolling on the root element.
     // The grid itself might have overflow-x-auto if it's too big, but R5 says critical info should be visible.
     expect(horizontalScrollable).toBe(false);
   });
 
-  test("Touch Target Verification (R2): Buttons and cells are at least 44x44px", async ({ page }) => {
+  test("Touch Target Verification (R2): Buttons and cells are at least 44x44px", async ({
+    page,
+  }) => {
     await page.goto("/game/easy");
 
     // Check main menu buttons (indirectly by going back)
@@ -37,7 +49,9 @@ test.describe("Mobile Optimization", () => {
 
     // Check game cells
     await page.goto("/game/extreme");
-    const cells = await page.locator("button[aria-label^='Toggle value']").all();
+    const cells = await page
+      .locator("button[aria-label^='Toggle value']")
+      .all();
     for (const cell of cells) {
       const box = await cell.boundingBox();
       if (box) {
@@ -49,7 +63,9 @@ test.describe("Mobile Optimization", () => {
     }
   });
 
-  test("Grid Scaling (R4): Extreme grid fits within 320px viewport", async ({ page }) => {
+  test("Grid Scaling (R4): Extreme grid fits within 320px viewport", async ({
+    page,
+  }) => {
     await page.goto("/game/extreme");
     const gameBoard = page.getByTestId("game-board");
     const box = await gameBoard.boundingBox();
@@ -58,7 +74,9 @@ test.describe("Mobile Optimization", () => {
     }
   });
 
-  test("Navigation Thumb Access (R6): Bottom navigation present on mobile", async ({ page }) => {
+  test("Navigation Thumb Access (R6): Bottom navigation present on mobile", async ({
+    page,
+  }) => {
     await page.goto("/game/easy");
     const bottomNav = page.locator(".fixed.bottom-0");
     await expect(bottomNav).toBeVisible();
