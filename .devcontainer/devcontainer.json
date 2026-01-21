@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1.0.15": {},
     "ghcr.io/devcontainers-extra/features/pre-commit:2.0.18": {},
-    "ghcr.io/devcontainers-extra/features/shellcheck:1.0.0": {},
+    "ghcr.io/devcontainers-extra/features/shellcheck:1.1.0": {},
     "ghcr.io/devcontainers-extra/features/uv:1.0.2": {},
     "ghcr.io/schlich/devcontainer-features/playwright:0.2.0": {
       "browsers": "chromium"
