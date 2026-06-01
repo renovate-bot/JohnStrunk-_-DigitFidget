@@ -46,7 +46,7 @@
     "typescript-eslint": "8.60.1",
     "vite": "8.0.14",
     "vite-plugin-pwa": "1.3.0",
-    "vitest": "4.1.7"
+    "vitest": "4.1.8"
   },
   "resolutions": {
     "vite": "8.0.14"
