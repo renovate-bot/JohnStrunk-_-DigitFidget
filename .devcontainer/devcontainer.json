@@ -1,6 +1,6 @@
 {
   "name": "Node.js & TypeScript",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:4.0.10-22@sha256:e83efc3afdd34da45be06111547c2240d4d33132c2b7c9e59cb823a2bbfc9f67",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:5.0.1-22@sha256:d519285997dbe8ec67e16ac9e2e1bd7aaeb4ce38694113189d07c071fd220f49",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1.1.0": {},
     "ghcr.io/devcontainers-extra/features/pre-commit:2.0.18": {},
