@@ -13,8 +13,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "react-router-dom": "7.18.3"
   },
   "devDependencies": {
@@ -28,8 +28,8 @@
     "@testing-library/user-event": "14.6.7",
     "@types/jsdom": "30.0.0",
     "@types/node": "24.13.4",
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.7",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.1",
     "autoprefixer": "10.5.5",
     "eslint": "10.10.0",
